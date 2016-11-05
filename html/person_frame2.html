@@ -1,0 +1,167 @@
+<!DOCTYPE html>	
+<html>	
+<head>	
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>	
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>	
+    <title>person_frame2</title>	
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>	
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>	
+    <style>	
+        body, html {	
+        }	
+	
+        .header {	
+            display: -webkit-box;	
+            display: -webkit-flex;	
+            display: flex;	
+        }	
+        .title {	
+            -webkit-box-flex: 1;	
+            -webkit-flex: 1;	
+            flex: 1;	
+        }	
+	
+        .login-header a {	
+            padding: 30px;	
+            background-size: 50px;	
+        }	
+        .index-header a,.detail-header a{	
+            display: block;	
+            background-size: 30px;	
+            padding: 20px;	
+        }	
+        .header a{	
+            background-repeat: no-repeat;	
+            background-position: center;	
+        }
+	
+        .login-header .nologin-user {	
+            -webkit-transform: rotateY(0deg);	
+            background-image: url("../image/user_defaulthead@2x.png");	
+        }	
+	
+	
+        .login-header {	
+            height: 100%;	
+            background-color: #886AEA;
+        }	
+	
+        .title {	
+            text-align: center;	
+            padding-top: 15px;	
+            display: -webkit-box;	
+            display: -webkit-flex;	
+            display: flex;	
+            -webkit-box-orient: vertical;	
+            -webkit-flex-flow: column;	
+            flex-flow: column;	
+        }	
+	
+        .login {	
+            color: whitesmoke;	
+            font-size: 18px;	
+        }	
+
+        .activity {	
+            margin: 0 10px;	
+        }	
+	
+        .activity li {	
+            padding: 15px 0;	
+            background-size: 8px;	
+            background-repeat: no-repeat;	
+            background-position: right;	
+            background-image: url("../image/setting_cell_arrow@2x.png");	
+            border-bottom: 1px solid #F6F6F6;	
+        }	
+	
+        .activity li:last-child {	
+            border-bottom: none;	
+        }	
+	
+        .subtitle {	
+            font-size: 16px;	
+            margin-left: 10px;	
+        }	
+	
+        .tag {	
+            color: #FFFFFF;	
+            padding: 2px;	
+            font-size: 13px;	
+            border-radius: 2px;	
+        }	
+	
+        .a1 {	
+            background-color: #FB000D;	
+        }	
+	
+        .a2 {	
+            background-color: #2CA6E6;	
+        }	
+	
+        .a3 {	
+            background-color: #FC5E48;	
+        }	
+	
+        .a4 {	
+            background-color: #04BC6F;	
+        }	
+    </style>	
+</head>	
+<body>	
+<header>	
+    <div class="login-header header ">	
+        <div class="hidden title">	
+            <a class="nologin-user" id="user" tapmode="" onclick=""></a>	
+            <div class="login" onclick="logout()">退出登录</div>	
+        </div>	
+    </div>	
+</header>	
+<div style="width:auto;height: 130px;background-color:#886AEA">
+
+</div>	
+<ul class="activity">	
+    <li>	
+        <span class="a1 tag">欢</span>	
+        <span class="subtitle" id="me">我的信息</span>	
+        
+    </li>	
+    <li>	
+        <span class="a3 tag">迎</span>	
+        <span class="subtitle">我的标记</span>	
+    </li>	
+    <li>	
+        <span class="a2 tag">回</span>	
+        <span class="subtitle">我的计划</span>	
+    </li>	
+    <li>	
+        <span class="a4 tag">来</span>	
+        <span class="subtitle">我的记录</span>	
+    </li>	
+</ul>
+</body>	
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+   document.getElementById('me').innerHTML = "我的信息 （" + localStorage.username + "）";	
+   function logout(){
+       $.confirm('确认退出？', function () {
+          next();
+      });
+   }
+   function next() {
+       var user = api.require('user');
+		   user.logout(function(ret, err){
+			    if(ret){
+			        localStorage.username = '';
+			    }
+			});
+    }
+	apiready = function(){
+	}
+</script>
+</html>	

@@ -1,0 +1,202 @@
+<!doctype html>	
+<html>	
+  <head>	
+    <meta charset="utf-8">	
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>	
+    <title>news_window</title>	
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />	
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />		
+  </head>	
+  
+  <style>	
+		html, body {width: 100%;min-height: 100%;background: #e5e5e5;}	
+		.h80 {height: 80px;}	
+		.h40 {height: 40px;}	
+		.h20 {height: 20px;}	
+    	.h10 {height: 10px;background: #e5e5e5;}	
+		.h1 {height: 1px;margin-left: 15px;background: #e5e5e5;}	
+		.fr {float: right;}	
+		.fl {float: left;}	
+		.hightitem {background-color: #fff;}	
+
+		/* 2X2样式 */	
+		.row {display: -webkit-box;display: -webkit-flex;display: flex;}	
+		.col {-webkit-box-flex:1; -webkit-flex:1; flex:1;position: relative;}	
+		.col img {position: absolute; right: 0; width: 80px; top: 0;}	
+		.col .matrixcell {display: table-cell;vertical-align: middle; padding-left: 10px;}	
+		.col .matrixcell .title {margin-bottom: 10px;}	
+		.matrix {display: table;height: inherit;}	
+
+		.Fix:after {display: block; content: ''; height: 0; clear: both; }	
+	
+		/* 4. tabbar*/	
+		.tabbar {height: 50px;line-height: 50px;text-align: center;border-bottom: 1px solid #e0e0e0;margin-top: 38px;}	
+		.tabbar .col {font-size: 14px;}	
+		
+		.indicator {height: 3px; width: 100%; background: #EF473A; position: absolute; bottom: 0;}	
+	
+	</style>
+  <body>	
+    <header class="bar bar-nav" id="thridHeader" style="background-color: #EF473A;">
+	  <button class="button button-link button-nav pull-left" onclick="closenews()" style="color: white;">
+	  <span class="icon icon-left"></span>
+	    返回
+	  </button>
+	  <h1 class="title" style="color: white">资讯</h1>
+	</header> 	
+	
+	<div class="row hightitem tabbar" id="forthHeader">	
+		<div class="col" id="col1">	
+			最新	
+		<div class="indicator" id="indicator1"></div>	
+		</div>	
+			
+		<div class="col"  id="col2">	
+			最热
+		<div class="indicator" id="indicator2"></div>	
+		</div>	
+	
+		<!--<div class="col" id="col3" tapmode>	
+			最好	
+		<div class="indicator" id="indicator3"></div>	
+		</div>	-->
+	</div>	
+  </body>	
+  <script type="text/javascript" src="../script/api.js"></script>	
+  <script type="text/javascript">	
+    function closenews() {
+     api.closeWin({
+         animation: {
+		        type: 'push',
+		        subType: 'from_left',
+		        duration: 300
+         }
+     });
+    }
+    function openframe() {
+        var thridHeader = $api.byId('thridHeader');	
+        $api.fixIos7Bar(thridHeader);	
+        var thridHeader = $api.offset(thridHeader);	
+        var forthHeader = $api.byId('forthHeader');	
+        $api.fixIos7Bar(forthHeader);	
+        var forthHeader = $api.offset(forthHeader);	
+//      api.openFrame ({	
+//          name: 'news_frame1',	
+//          url: 'news_frame1.html',	
+//          rect:{	
+//              x:0,	
+//              y:thridHeader.h,	
+//              w:'auto',	
+//              h:'auto'	
+//          },	
+//          bounces: false,	
+//          delay:200,
+//          vScrollBarEnabled: false,
+//	        hScrollBarEnabled: false
+//      });
+        api.openFrameGroup ({
+		    name: 'news_group',
+		    background: '#fff',
+		    rect: {
+		         x: 0, 
+		         y: thridHeader.h + forthHeader.h - 7, 
+		         w: 'auto', 
+		         h: 'auto'
+		    },
+		    frames: [{
+		        name: 'frame1', 
+		        url: 'news_frame1.html',
+		        bgColor: '#eee',
+		        bounces:false,
+		        vScrollBarEnabled:false,
+		        hScrollBarEnabled: false
+		    },{
+		        name: 'frame2', 
+		        url: 'news_frame2.html', 
+		        bgColor: '#eee',
+		        bounces:false,
+		        vScrollBarEnabled:false,
+		        hScrollBarEnabled: false
+		    }]
+		}, function( ret, err ){
+		    if( ret ){
+		         tabswitch (ret.index + 1);
+		    }else{
+		         alert( JSON.stringify( err ) );
+		    }
+		});
+    }
+    function loading() {
+		     $.showIndicator();
+		       setTimeout(function () {
+		          $.hideIndicator();
+		      }, 2000);
+	}
+    apiready = function(){	
+        loading();
+      	openframe();
+    }
+    
+    function tabswitch (type) {	
+			var col1 = $api.byId('col1');	
+			var col2 = $api.byId('col2');	
+			//var col3 = $api.byId('col3');	
+	
+			var indicator1 = $api.byId("indicator1");	
+			var indicator2 = $api.byId("indicator2");	
+			//var indicator3 = $api.byId("indicator3");	
+	
+			var list1 = $api.byId("list1");	
+			var list2 = $api.byId("list2");	
+			//var list3 = $api.byId("list3");	
+	
+			if (type == 1) {	
+				col1.style.color = "#EF473A";	
+				col2.style.color = "#404144";	
+				//col3.style.color = "#404144";	
+	
+				indicator1.style.display = "block";	
+				indicator2.style.display = "none";	
+				//indicator3.style.display = "none";	
+	
+				list1.style.display = "block";	
+				list2.style.display = "none";	
+				//list3.style.display = "none";	
+			}	
+			else if (type == 2) {	
+				col2.style.color = "#EF473A";	
+				col1.style.color = "#404144";	
+				//col3.style.color = "#404144";	
+	
+				indicator1.style.display = "none";	
+				indicator2.style.display = "block";	
+				//indicator3.style.display = "none";	
+	
+				list1.style.display = "none";	
+				list2.style.display = "block";	
+				//list3.style.display = "none";	
+			}else {	
+				//col3.style.color = "#EF473A";	
+				col1.style.color = "#404144";	
+				col2.style.color = "#404144";	
+	
+				indicator1.style.display = "none";	
+				indicator2.style.display = "none";	
+				//indicator3.style.display = "block";	
+	
+				list1.style.display = "none";	
+				list2.style.display = "none";	
+				//list3.style.display = "block";	
+			}	
+	}	
+    window.onload = function  () {	
+		tabswitch(1);	
+	}
+  </script>	
+  <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+</html>	

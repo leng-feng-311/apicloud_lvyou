@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="A6900603990772" version="2.0.16"> 
+  <name>乡村旅游</name>  
+  <description/>  
+  <author email="1379712977@qq.com" href="http://www.apicloud.com">yeardany</author>  
+  <content src="index.html"/>  
+  <preference name="appBackground" value="rgba(0,0,0,0)"/>  
+  <preference name="windowBackground" value="rgba(0,0,0,0)"/>  
+  <preference name="frameBackgroundColor" value="rgba(0,0,0,0)"/>  
+  <preference name="autoLaunch" value="true"/>  
+  <preference name="autoUpdate" value="true"/>  
+  <preference name="smartUpdate" value="true"/>  
+  <preference name="debug" value="false"/>  
+  <preference name="statusBarAppearance" value="false"/>  
+  <preference name="fullScreen" value="false"/>  
+  <preference name="hScrollBarEnabled" value="true"/>  
+  <preference name="vScrollBarEnabled" value="true"/>  
+  <preference name="iOS7StatusBarAppearance" value="false"/>  
+  <preference name="pageBounce" value="false"/>  
+  <permission name="internet"/>  
+  <access origin="*"/>  
+  <feature name="bMap"> 
+    <param name="android_api_key" value="HrZBEl9FLxrXCEYr5CdjjF5I"/> 
+  </feature>  
+  <feature name="wx"> 
+    <param name="urlScheme" value="wx5c9af250acc80e00"/>  
+    <param name="apiKey" value="wx5c9af250acc80e00"/>  
+    <param name="apiSecret" value="c0204378734063a3909ca304ba638262"/> 
+  </feature>  
+  <feature name="weibo"> 
+    <param name="urlScheme" value="wb832317951"/>  
+    <param name="apiKey" value="832317951"/> 
+  </feature> 
+</widget>

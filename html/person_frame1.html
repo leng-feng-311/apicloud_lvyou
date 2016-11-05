@@ -1,0 +1,168 @@
+<!DOCTYPE html>	
+<html>	
+<head>	
+	<meta charset="utf-8">	
+	<title>person_frame1</title>	
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>	
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1455934805_0033045.css">
+    
+    <style>	
+    	html, body {width: 100%;min-height: 100%;background: #f0f0f0;}
+		/* 头部登陆 */	
+		.login {position:relative;background-size: contain;}	
+		.loginbg { width: 100%;}	
+		.login .personal_logo {position: absolute; left:0;top: 15px; width: 70px; margin-left: 20px;}	
+		.login .userinfo {position: absolute; top: 15px; margin-left: 100px;}	
+		.login .userinfo .title {font-size: 20px; color: #fff;}	
+		.login .userinfo .subtitle {font-size: 14px; color: #fff;border: 1px solid #fff;display: inline-block;padding: 3px;border-radius: 4px;margin-top: 35px;}
+		.list-block {margin-top: 0px;}
+		.iconfont {font-size:20px;font-style:normal;font-weight:normal;}
+    </style>	
+</head>	
+<body>	
+	 <div class="login" onclick="login()" tapmode>
+		<div style="width: 100%;height: 110px;background-color: #886AEA;"></div>	
+		<img src="../image/user_defaulthead@2x.png" alt="" class="personal_logo">	
+		<div class="userinfo">	
+			<div class="title">立即登录</div>	
+			<div class="subtitle" id="city"></div>	
+		</div>		
+	 </div>	
+	
+	 <div class="list-block">
+	    <ul>
+	      <li class="item-content item-link" onclick="warn()">
+	        <div class="item-media"><i class="icon iconfont icon-5"></i></div>
+	        <div class="item-inner">
+	          <div class="item-title">我的信息</div>
+	          <div class="item-after"></div>
+	        </div>
+	      </li>
+	      <li class="item-content item-link" onclick="warn()">
+	        <div class="item-media"><i class="icon iconfont icon-yonghu"></i></div>
+	        <div class="item-inner">
+	          <div class="item-title">我的标记</div>
+	          <div class="item-after"></div>
+	        </div>
+	      </li>
+	      <li class="item-content item-link" onclick="warn()">
+	        <div class="item-media"><i class="icon iconfont icon-jihua01"></i></div>
+	        <div class="item-inner">
+	          <div class="item-title">我的计划</div>
+	          <div class="item-after"></div>
+	        </div>
+	      </li>
+	      <li class="item-content item-link" onclick="warn()">
+	        <div class="item-media"><i class="icon iconfont icon-pingfenjilu"></i></div>
+	        <div class="item-inner">
+	          <div class="item-title">我的记录</div>
+	          <div class="item-after"></div>
+	        </div>
+	      </li>
+	    </ul>
+    </div>
+    
+	<div class="list-block">
+	    <ul>
+	      <li class="item-content item-link">
+	        <div class="item-media"><i class="icon iconfont"></i></div>
+	        <div class="item-inner">
+	          <div class="item-title">待定...</div>
+	          <div class="item-after"></div>
+	        </div>
+	      </li>
+	      <li class="item-content item-link">
+	        <div class="item-media"><i class="icon iconfont"></i></div>
+	        <div class="item-inner">
+	          <div class="item-title">待定...</div>
+	          <div class="item-after"></div>
+	        </div>
+	      </li>
+	    </ul>
+   </div>
+</body>	
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>	
+<script type="text/javascript" src="../script/api.js"></script>	
+<script type="text/javascript">	
+    document.getElementById('city').innerHTML = "现居地：" + localStorage.city;
+	function login() {
+	    var buttons1 = [
+        {
+          text: '登录/没有账号？点击注册...',
+          label: true
+        },
+        {
+          text: '我有账号，登录',
+          bold: true,
+          onClick: function() {
+             loginsure();
+          }
+        },
+        {
+          text: '还没账号，注册',
+          bold: true,
+          onClick: function() {
+             register();
+          }
+        }
+      ];
+      var buttons2 = [
+        {
+          text: '取消',
+          bg: 'danger'
+        }
+      ];
+      var groups = [buttons1, buttons2];
+      $.actions(groups);
+	}
+	function loginsure() {
+	    api.openWin({
+	        name: 'openlogin',
+	        url: 'login_window.html',
+            vScrollBarEnabled: false,
+	        hScrollBarEnabled: false,
+	        subType:"from_left",
+	        delay:200
+        });
+	}
+	function register() {
+	    api.openWin({
+	        name: 'openregister',
+	        url: 'register_window.html',
+            vScrollBarEnabled: false,
+	        hScrollBarEnabled: false,
+	        subType:"from_left",
+	        delay:200
+        });
+	}
+	function warn() {
+	    $.modal({
+	      title:  '提示',
+	      text: '您还未登录，请先登录！',
+	      buttons: [
+	        {
+	          text: '好的'
+	        }
+	      ]
+	    })
+	}
+	apiready = function(){
+	   api.addEventListener({
+		    name:'swiperight'
+		},function(ret,err){
+		         api.closeWin({
+                 animation: {
+			        type: 'push',
+			        subType: 'from_left',
+			        duration: 300
+	         }
+	     });
+		});
+	}
+</script>	
+</html>	
