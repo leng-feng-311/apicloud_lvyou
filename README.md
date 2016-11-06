@@ -1,4 +1,4 @@
-# 乡村旅游app
+# 乡村旅游app [[下载APP](http://ofyo106p1.bkt.clouddn.com/乡村智慧导游.apk?attname=&e=1478401333&token=ta3AWG_OV18vbalFzxX2jPEMnUCNjhZXIDofrWZO:Wml8ADqnWTSbNat9ab77bO-Zk98)]
 
 学校的科创项目，用了apicloud，这是一个项目文件，需要使用apicloud studio打开在打包成app
 
