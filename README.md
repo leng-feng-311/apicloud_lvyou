@@ -2,7 +2,7 @@
 
 学校的科创项目，用了apicloud，这是一个项目文件，需要使用apicloud studio打开在打包成app
 
-1. 下载（Android）：[[点击下载APP](http://ofyo106p1.bkt.clouddn.com/xcly.apk?attname=&e=1484129504&token=ta3AWG_OV18vbalFzxX2jPEMnUCNjhZXIDofrWZO:aerYehEeubLPKGka9wG5_nZgoxc)]
+1. 下载（Android）：[[点击下载APP](http://downloadpkg.apicloud.com/app/download?path=http://7xqv5j.com1.z0.glb.clouddn.com/217143aa44f228f1fe8bcaa0be7c1ce4_d)]
 
 2. 功能点：
 
