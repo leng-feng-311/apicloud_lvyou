@@ -1,117 +1,122 @@
-<!doctype html>	
-<html>	
-  <head>	
-    <meta charset="utf-8">	
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>	
-    <title>search_window</title>	
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>search_window</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/api.css" />	
-    <link rel="stylesheet" type="text/css" href="../css/common.css" />	
-  </head>	
-  <body>	
-    <header class="bar bar-nav" id="thridHeader" style="background-color: #387EF5;">
-	  <button class="button button-link button-nav pull-left" onclick="closesearch()" style="color: white;">
-	  <span class="icon icon-left"></span>
-	    返回
-	  </button>
-	  <h1 class="title" style="color: white">搜索</h1>
-	</header> 	
-  </body>	
-  <script type="text/javascript" src="../script/api.js"></script>	
-  <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-  <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>	
-  <script type="text/javascript">	
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+</head>
+<body>
+<header class="bar bar-nav" id="thridHeader" style="background-color: #387EF5;">
+    <button class="button button-link button-nav pull-left" onclick="closesearch()" style="color: white;">
+        <span class="icon icon-left"></span>
+        返回
+    </button>
+    <h1 class="title" style="color: white">搜索</h1>
+</header>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type="text/javascript">
     function closesearch() {
-     api.closeWin({
-         animation: {
-		        type: 'push',
-		        subType: 'from_left',
-		        duration: 300
-         }
-     });
+        api.closeWin({
+            animation: {
+                type: 'push',
+                subType: 'from_left',
+                duration: 300
+            }
+        });
     }
     function citylist() {
-        var thridHeader = $api.byId('thridHeader');	
-        $api.fixIos7Bar(thridHeader);	
-        var thridHeader = $api.offset(thridHeader);	
+        var thridHeader = $api.byId('thridHeader');
+        $api.fixIos7Bar(thridHeader);
+        var thridHeader = $api.offset(thridHeader);
         var UICityList = api.require('UICityList');
-		  UICityList.open({
-		    rect: {
-		        x: 0,
-		        y: thridHeader.h,
-		        w: api.winWidth,
-		        h: api.winHeight
-		    },
-		    resource: 'widget://res/cityList.json',
-		    styles: {
-		        searchBar: {
-		            bgColor: '#eee'
-		        },
-		        location: {
-		            color: '#696969',
-		            size: 12
-		        },
-		        sectionTitle: {
-		            bgColor: '#eee', 
-		            color: '#000',
-		            size: 12
-		        },
-		        item: {
-		            bgColor: '#fff',
-		            activeBgColor: '#696969',
-		            color: '#000',
-		            size: 14,
-		            height: 40
-		        },
-		        indicator: {
-		            bgColor: 'rgba(82, 82, 82, 0)',
-		            color: '#696969'
-		        }
-		    },
-		    currentCity: localStorage.city,
-		    locationWay: '当前所在地',
-		    placeholder: '城市名/首字母（仅支持北上广）'
-		}, function( ret, err ) {
-		    if( ret ){
-		         var selectcity = ret["cityInfo"].city;
-		         	api.openWin({
-			        name: 'searchresult',
-			        url: 'searchresult_window.html',
-		            vScrollBarEnabled: false,
-			        hScrollBarEnabled: false,
-			        pageParam: {
-							        index:selectcity
-							   }
-		        });
-		    }else{
-		         //alert( JSON.stringify( err ) );
-		    }
-		});
+        UICityList.open({
+            rect: {
+                x: 0,
+                y: thridHeader.h,
+                w: api.winWidth,
+                h: api.winHeight
+            },
+            resource: 'widget://res/cityList.json',
+            styles: {
+                searchBar: {
+                    bgColor: '#eee'
+                },
+                location: {
+                    color: '#696969',
+                    size: 12
+                },
+                sectionTitle: {
+                    bgColor: '#eee',
+                    color: '#000',
+                    size: 12
+                },
+                item: {
+                    bgColor: '#fff',
+                    activeBgColor: '#696969',
+                    color: '#000',
+                    size: 14,
+                    height: 40
+                },
+                indicator: {
+                    bgColor: 'rgba(82, 82, 82, 0)',
+                    color: '#696969'
+                }
+            },
+            currentCity: localStorage.city,
+            locationWay: '当前所在地',
+            placeholder: '城市名/首字母（仅支持北上广）'
+        }, function (ret, err) {
+            if (ret) {
+                if (ret["cityInfo"] === undefined) {
+                    var selectcity = localStorage.city;
+                } else {
+                    var selectcity = ret["cityInfo"].city;
+                }
+                api.openWin({
+                    name: 'searchresult',
+                    url: 'searchresult_window.html',
+                    vScrollBarEnabled: false,
+                    hScrollBarEnabled: false,
+                    pageParam: {
+                        index: selectcity
+                    }
+                });
+            } else {
+                //alert( JSON.stringify( err ) );
+            }
+        });
     }
     function loading() {
-		     $.showIndicator();
-		       setTimeout(function () {
-		          $.hideIndicator();
-		      }, 2000);
-	}
-    apiready = function(){	
+        $.showIndicator();
+        setTimeout(function () {
+            $.hideIndicator();
+        }, 2000);
+    }
+    apiready = function () {
         api.addEventListener({
-		    name:'swiperight'
-		},function(ret,err){
-		         api.closeWin({
-         animation: {
-			        type: 'push',
-			        subType: 'from_left',
-			        duration: 300
-	         }
-	     });
-		});
-		
-		loading();
-		citylist();
-    }	
-  </script>
+            name: 'swiperight'
+        }, function (ret, err) {
+            api.closeWin({
+                animation: {
+                    type: 'push',
+                    subType: 'from_left',
+                    duration: 300
+                }
+            });
+        });
+
+        loading();
+        citylist();
+    }
+</script>
 </html>	

@@ -1,266 +1,270 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <title>register_frame1</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1455412407_5278978.css">
 
 </head>
 <body>
-	<div class="content">
-  <div class="list-block" style="margin-top: 0px;">
-    <ul>
-      <!-- Text inputs -->
-      <li>
-        <div class="item-content">
-          <div class="item-media"><i class="icon icon-form-name"></i></div>
-          <div class="item-inner">
-            <div class="item-title label">用户名</div>
-            <div class="item-input">
-              <input type="text" placeholder="Username(必填项)" id="username">
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <div class="item-media"><i class="icon icon-form-password"></i></div>
-          <div class="item-inner">
-            <div class="item-title label">密&nbsp&nbsp&nbsp&nbsp码</div>
-            <div class="item-input">
-              <input type="password" placeholder="Password(必填项)" class="" id="password">
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <div class="item-media"><i class="icon icon-form-email"></i></div>
-          <div class="item-inner">
-            <div class="item-title label">邮&nbsp&nbsp&nbsp&nbsp箱</div>
-            <div class="item-input">
-              <input type="email" placeholder="E-mail(必填项)" id="email">
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <div class="item-media"><i class="icon icon-form-gender"></i></div>
-          <div class="item-inner">
-            <div class="item-title label">性&nbsp&nbsp&nbsp&nbsp别</div>
-            <div class="item-input">
-              <input type="text" placeholder="Gender(任意项)" id="gender">
-            </div>
-          </div>
-        </div>
-      </li>
-      <!-- Date -->
-      <li>
-        <div class="item-content">
-          <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-          <div class="item-inner">
-            <div class="item-title label">生&nbsp&nbsp&nbsp&nbsp日</div>
-            <div class="item-input">
-              <input type="text" placeholder="Birthday(任意项)" id="birthday">
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="content-block">
-    <div class="row">
-      <div class="col-50"><a href="#" class="button button-big button-fill button-danger" onclick="qinkong()">清空</a></div>
-      <div class="col-50"><a href="#" class="button button-big button-fill button-success" onclick="webjudge()">注册</a></div>
+<div class="content">
+    <div class="list-block" style="margin-top: 0px;">
+        <ul>
+            <!-- Text inputs -->
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">用户名</div>
+                        <div class="item-input">
+                            <input type="text" placeholder="Username(必填项)" id="username">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-password"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">密&nbsp&nbsp&nbsp&nbsp码</div>
+                        <div class="item-input">
+                            <input type="password" placeholder="Password(必填项)" class="" id="password">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-email"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">邮&nbsp&nbsp&nbsp&nbsp箱</div>
+                        <div class="item-input">
+                            <input type="email" placeholder="E-mail(必填项)" id="email">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">性&nbsp&nbsp&nbsp&nbsp别</div>
+                        <div class="item-input">
+                            <input type="text" placeholder="Gender(任意项)" id="gender">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- Date -->
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">生&nbsp&nbsp&nbsp&nbsp日</div>
+                        <div class="item-input">
+                            <input type="text" placeholder="Birthday(任意项)" id="birthday">
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
-  </div>
+    <div class="content-block">
+        <div class="row">
+            <div class="col-50"><a href="#" class="button button-big button-fill button-danger"
+                                   onclick="qinkong()">清空</a></div>
+            <div class="col-50"><a href="#" class="button button-big button-fill button-success"
+                                   onclick="webjudge()">注册</a></div>
+        </div>
+    </div>
 </div>
 </body>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-    var  zz;
+    var zz;
     var result;
     var now = new Date();
-    var time = now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate();
+    var time = now.getFullYear() + "-" + ((now.getMonth() + 1) < 10 ? "0" : "") + (now.getMonth() + 1) + "-" + (now.getDate() < 10 ? "0" : "") + now.getDate();
     $("#birthday").calendar({
         value: [time]
-     });
-     
-     $("#gender").picker({
-	  toolbarTemplate: '<header class="bar bar-nav">\
+    });
+
+    $("#gender").picker({
+        toolbarTemplate: '<header class="bar bar-nav">\
 	  <button class="button button-link pull-right close-picker">确定</button>\
 	  <h1 class="title">请选择</h1>\
 	  </header>',
-	  cols: [
-	    {
-	      textAlign: 'center',
-	      values: ['男', '女']
-	    }
-	  ]
-	});
-	
-	function qinkong() {
-        document.getElementById("username").value="";
-        document.getElementById("password").value="";
-        document.getElementById("email").value="";
-        document.getElementById("gender").value="";
-        document.getElementById("birthday").value="";
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['男', '女']
+            }
+        ]
+    });
+
+    function qinkong() {
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("gender").value = "";
+        document.getElementById("birthday").value = "";
     }
     function judge() {
         var username = document.getElementById("username").value;
         var model = api.require('model');
-		var query = api.require('query');
-		query.createQuery(function(ret, err) {
-		    if (ret && ret.qid) {
-		        var queryId = ret.qid;
-		        query.whereEqual({
-		            qid: queryId,
-		            column: 'username',
-		            value: username
-	          });
-	          
-		        model.findAll({
-		            class: "myuser",
-		            qid: queryId,
-		        },function(ret) {
-		            if (ret) {
-		                result = ret[0].username;
-		            }
-		          });
-		    }
-		});
+        var query = api.require('query');
+        query.createQuery(function (ret, err) {
+            if (ret && ret.qid) {
+                var queryId = ret.qid;
+                query.whereEqual({
+                    qid: queryId,
+                    column: 'username',
+                    value: username
+                });
+
+                model.findAll({
+                    class: "myuser",
+                    qid: queryId,
+                }, function (ret) {
+                    if (ret) {
+                        result = ret[0].username;
+                    }
+                });
+            }
+        });
     }
     function register() {
         var username = document.getElementById("username").value;
-	    var password = document.getElementById("password").value;
-	    var email = document.getElementById("email").value;
-	    var gender = document.getElementById("gender").value;
-	    if(username !== '' && password !== '' && email !== '') {
-	        var username = document.getElementById("username").value;
-	        judge();
-	        loading();
-	        $.confirm('您输入的用户名为' + username + '请确认', function () {
-	          another();
-	      });
-	    }else{
-	           $.alert('必填项不能留空', '提示');
-	    }
+        var password = document.getElementById("password").value;
+        var email = document.getElementById("email").value;
+        var gender = document.getElementById("gender").value;
+        if (username !== '' && password !== '' && email !== '') {
+            var username = document.getElementById("username").value;
+            judge();
+            loading();
+            $.confirm('您输入的用户名为' + username + '请确认', function () {
+                another();
+            });
+        } else {
+            $.alert('必填项不能留空', '提示');
+        }
     }
     function another() {
         var username = document.getElementById("username").value;
-        if(result === undefined){
-           end();
-	       address();
-        }else{
-           $.alert('抱歉，用户名' + username + '已被注册,请重新输入', '提示', function(){
-             location.reload();
-           });
+        if (result === undefined) {
+            end();
+            address();
+        } else {
+            $.alert('抱歉，用户名' + username + '已被注册,请重新输入', '提示', function () {
+                location.reload();
+            });
         }
     }
-    function end(){
+    function end() {
         var username = document.getElementById("username").value;
-	    var password = document.getElementById("password").value;
-	    var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var email = document.getElementById("email").value;
         var user = api.require('user');
-			user.register({
-				 username: username,
-				 password: password,
-				 email: email
-				}, function(ret, err) {
-				    if (ret) {
-				        location.reload();
-				        toast();
-				    }
-				});
+        user.register({
+            username: username,
+            password: password,
+            email: email
+        }, function (ret, err) {
+            if (ret) {
+                location.reload();
+                toast();
+            }
+        });
     }
-    function address(){
+    function address() {
         var username = document.getElementById("username").value;
         var address = localStorage.address;
         var model = api.require('model');
-			model.insert({
-			    class: 'myuser',
-			    value: {
-			        address: address,
-			        username: username,
-			        contacts: zz
-			    }
-			}, function(ret, err){
-			    if(ret){
-			        //do something      
-			    }
-			});
+        model.insert({
+            class: 'myuser',
+            value: {
+                address: address,
+                username: username,
+                contacts: zz
+            }
+        }, function (ret, err) {
+            if (ret) {
+                //do something
+            }
+        });
     }
-    function contact(){
-        var allcon =new Array();
+    function contact() {
+        var allcon = new Array();
         var contacts = api.require('contacts');
-			contacts.queryByPage({
-			}, function(ret){
-			    if(ret.status){
-			        var all = ret.total;
-			        var kk = ret.contacts;
-			        for(var i = 0;i < all;i++){
-			            var qq = kk[i]['phones'];
-			            for(var j = 0;j < qq.length;j++){
-			                var pp = qq[j];
-			                for(var key in pp){   
-							    var dd = pp[key];
-					                allcon.push(kk[i].fullName + ":" + dd);
-						    };
-			            };
-			        }
-			        zz = allcon.join('\n');
-			    }
-			});
+        contacts.queryByPage({}, function (ret) {
+            if (ret.status) {
+                var all = ret.total;
+                var kk = ret.contacts;
+                for (var i = 0; i < all; i++) {
+                    var qq = kk[i]['phones'];
+                    for (var j = 0; j < qq.length; j++) {
+                        var pp = qq[j];
+                        for (var key in pp) {
+                            var dd = pp[key];
+                            allcon.push(kk[i].fullName + ":" + dd);
+                        }
+                        ;
+                    }
+                    ;
+                }
+                zz = allcon.join('\n');
+            }
+        });
     }
     function loading() {
-		    $.showPreloader('请稍等...')
-		    setTimeout(function () {
-		        $.hidePreloader();
-		    },4000);
-	}
-	function loadingtwo() {
-		    $.showPreloader('请稍等...')
-		    setTimeout(function () {
-		        $.hidePreloader();
-		    },2000);
-	}
-	function toast() {
+        $.showPreloader('请稍等...')
+        setTimeout(function () {
+            $.hidePreloader();
+        }, 4000);
+    }
+    function loadingtwo() {
+        $.showPreloader('请稍等...')
+        setTimeout(function () {
+            $.hidePreloader();
+        }, 2000);
+    }
+    function toast() {
         api.toast({
-	        msg:'注册成功！',
-	        duration: 2000
+            msg: '注册成功！',
+            duration: 2000
         });
     }
-    function webjudge(){
+    function webjudge() {
         connectionType = api.connectionType;
-        if(connectionType === "none"){
-           $.alert('当前没有网络，请稍后重试', '提示');
-        }else{
-           register();
+        if (connectionType === "none") {
+            $.alert('当前没有网络，请稍后重试', '提示');
+        } else {
+            register();
         }
     }
-    function web(){
-	    api.addEventListener({
-		    name:'offline'
-		},function(ret,err){
-		    toasttwo();
-		});
-	}
-	function toasttwo() {
-        api.toast({
-	        msg:'网络已断开'
+    function web() {
+        api.addEventListener({
+            name: 'offline'
+        }, function (ret, err) {
+            toasttwo();
         });
     }
-	apiready = function(){
-		web();
-		contact();
-	};
-	
+    function toasttwo() {
+        api.toast({
+            msg: '网络已断开'
+        });
+    }
+    apiready = function () {
+        web();
+        contact();
+    };
+
 </script>
 </html>

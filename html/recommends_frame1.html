@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <title>recommends_frame1</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
     <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <style>
-    	html,body{
-    		background-color: #EEEEEE;
-    	}
-    	.card{
-    	  box-shadow: none;
-    	  border-radius: 5px;
-    	  background-color: white;
-    	}
-    	.content{
-    	  margin-top: 20px;
-    	}
-    	.mycontent-padded{
-    	  height: 80px;
-    	  font-size: 14px;
-    	  margin: -3px 0px 0px 0px;
-    	  overflow:hidden;
-    	  text-overflow:ellipsis;
-    	  whitespace:pre-wrap;
-    	}
+        html, body {
+            background-color: #EEEEEE;
+        }
+
+        .card {
+            box-shadow: none;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .mycontent-padded {
+            height: 80px;
+            font-size: 14px;
+            margin: -3px 0px 0px 0px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            whitespace: pre-wrap;
+        }
     </style>
 </head>
 <body>
-  
-   <center>根据当前所在地为您推荐</center>
- 
-   <div class="content" id="ctl">
-   </div> 
+
+<center>根据当前所在地为您推荐</center>
+
+<div class="content" id="ctl">
+</div>
 </body>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
@@ -43,155 +47,156 @@
     var citylist = localStorage.recommendlist.split(",");
     var introducelist = localStorage.introducelist.split(",");
     var i = citylist.length;
-	apiready = function(){
-		api.addEventListener({
-		    name:'swiperight'
-		},function(ret,err){
-		         api.closeWin({
-         animation: {
-			        type: 'push',
-			        subType: 'from_left',
-			        duration: 300
-	         }
-	     });
-		});
-		api.getPrefs({
-		    key: 'k'
-		}, function( ret, err ){
-		    if( ret ){
-		      if(ret.value !== ''){
-		        var myarr = JSON.parse(ret.value);
-		        list(myarr);
-		      } 
-		    }else{
-		         alert( JSON.stringify( err ) );
-		    }
-		});
-		
-	}
-	function list(myarr){
-	  for(var j = 0;j < i;j++){
-        document.getElementById('ctl').innerHTML += '<div class=\"card\"><div class=\"card-header\" id=\"cardheader\">' + citylist[j] + '</div><div class=\"card-content\"><div class=\"list-block media-list\"><ul><li class=\"item-content\"><div class=\"item-media\"><img style=\"width: 100px;height: 80px;\" src=' + myarr[j] + '></div><div class=\"item-inner\"><div class=\"content-padded mycontent-padded aui-ellipsis-2\" id=\"jianjie\">' + introducelist[j] + '</div></div></li></ul></div></div><div class=\"card-footer\"><a href=\"#\" class=\"link\" onclick=\"biaoji()\"><span class=\"icon icon-emoji\"></span>&nbsp喜欢</a><a href=\"#\" class=\"link\" onclick=\"detail('+ j +')\"><span class=\"icon icon-gift\"></span>&nbsp详情</a><a href=\"#\" class=\"link\" onclick=\"more('+ j +')\"><span class=\"icon icon-share\"></span>&nbsp更多</a></div></div>';	    
-      }	
-   } 
-   function more(j){
-      var buttons1 = [
-        {
-          text: citylist[j],
-          label: true
-        },
-        {
-          text: '分享',
-          onClick: function() {
-            share(j);
-          }
-        },
-        {
-          text: '评论',
-          onClick: function() {
-            
-          }
-        }
-      ];
-      var buttons2 = [
-        {
-          text: '取消'
-        }
-      ];
-      var groups = [buttons1, buttons2];
-      $.actions(groups);
-   }
-   function toast(tst) {
-        api.toast({
-	        msg: tst
+    apiready = function () {
+        api.addEventListener({
+            name: 'swiperight'
+        }, function (ret, err) {
+            api.closeWin({
+                animation: {
+                    type: 'push',
+                    subType: 'from_left',
+                    duration: 300
+                }
+            });
         });
-   }
-   function checkwechat(j){
-       var wx = api.require('wx');
-		   wx.isInstalled(function(ret, err){
-			   if(ret.installed){
-		          wechat(j);
-			    }else{
-			        toast("当前设备未安装微信客户端");
-			    }
-			});
-   }
-   function wechat(j){
-       var wx = api.require('wx');
-		   wx.shareText({
-			    scene: 'timeline',
-			    text: '景点：' + citylist[j] + '  介绍：' + introducelist[j]
-			}, function(ret, err){
-			    if(ret.status){
-			        toast('分享成功');
-			    }else{
-			    //2（用户取消）
+        api.getPrefs({
+            key: 'k'
+        }, function (ret, err) {
+            if (ret) {
+                if (ret.value !== '') {
+                    var myarr = JSON.parse(ret.value);
+                    list(myarr);
+                }
+            } else {
+                alert(JSON.stringify(err));
+            }
+        });
+
+    }
+    function list(myarr) {
+        for (var j = 0; j < i; j++) {
+            document.getElementById('ctl').innerHTML += '<div class=\"card\"><div class=\"card-header\" id=\"cardheader\">' + citylist[j] + '</div><div class=\"card-content\"><div class=\"list-block media-list\"><ul><li class=\"item-content\"><div class=\"item-media\"><img style=\"width: 100px;height: 80px;\" src=' + myarr[j] + '></div><div class=\"item-inner\"><div class=\"content-padded mycontent-padded aui-ellipsis-2\" id=\"jianjie\">' + introducelist[j] + '</div></div></li></ul></div></div><div class=\"card-footer\"><a href=\"#\" class=\"link\" onclick=\"biaoji()\"><span class=\"icon icon-emoji\"></span>&nbsp喜欢</a><a href=\"#\" class=\"link\" onclick=\"detail(' + j + ')\"><span class=\"icon icon-gift\"></span>&nbsp详情</a><a href=\"#\" class=\"link\" onclick=\"more(' + j + ')\"><span class=\"icon icon-share\"></span>&nbsp更多</a></div></div>';
+        }
+    }
+    function more(j) {
+        var buttons1 = [
+            {
+                text: citylist[j],
+                label: true
+            },
+            {
+                text: '分享',
+                onClick: function () {
+                    share(j);
+                }
+            },
+            {
+                text: '评论',
+                onClick: function () {
+
+                }
+            }
+        ];
+        var buttons2 = [
+            {
+                text: '取消'
+            }
+        ];
+        var groups = [buttons1, buttons2];
+        $.actions(groups);
+    }
+    function toast(tst) {
+        api.toast({
+            msg: tst
+        });
+    }
+    function checkwechat(j) {
+        var wx = api.require('wx');
+        wx.isInstalled(function (ret, err) {
+            if (ret.installed) {
+                wechat(j);
+            } else {
+                toast("当前设备未安装微信客户端");
+            }
+        });
+    }
+    function wechat(j) {
+        var wx = api.require('wx');
+        wx.shareText({
+            scene: 'timeline',
+            text: '景点：' + citylist[j] + '  介绍：' + introducelist[j]
+        }, function (ret, err) {
+            if (ret.status) {
+                toast('分享成功');
+            } else {
+                //2（用户取消）
                 //3（发送失败）
                 //4（授权拒绝）
-                if(err.code === 2){
-                   toast('已取消分享');
-                }else if(err.code === 3){
-                   toast('内容发送失败');
-                }else if(err.code === 4){
-                   toast('拒绝授权');
-                }else{
-			       toast("未知错误，错误码：" + err.code);
-			    }
-			}});
-   }
-   function share(j){
-      var buttons1 = [
-        {
-          text: '分享到',
-          label: true
-        },
-               {
-          text: 'QQ（暂不支持）',
-          onClick: function() {
-            toast("由于权限原因，暂不支持");
-          }
-        },
-        {
-          text: '微博',
-          onClick: function() {
-            var weibo = api.require('weibo');
-				weibo.shareText({
-				    text: '景点：' + citylist[j] + '  介绍：' + introducelist[j]
-				},function(ret,err){
-				    if (ret.status) {
-				      toast('分享成功');
-				    }else if(err.code === 1){
-				      toast("已取消分享"); 
-				    }else{
-				      toast("分享失败，错误代码：" + err.code);
-				    }
-				});
-          }
-        },
-        {
-          text: '微信朋友圈',
-          onClick: function() {
-            checkwechat(j);
-          }
-        }
-      ];
-      var buttons2 = [
-        {
-          text: '取消'
-        }
-      ];
-      var groups = [buttons1, buttons2];
-      $.actions(groups);
-   }
-   function detail(index) {
-       api.openWin({
-	       name: 'openrecommenddetail',
-	       url: 'recommenddetail_window.html',
-           vScrollBarEnabled: false,
-	       hScrollBarEnabled: false,
-	       pageParam: {
-				        index:index
-				   }
+                if (err.code === 2) {
+                    toast('已取消分享');
+                } else if (err.code === 3) {
+                    toast('内容发送失败');
+                } else if (err.code === 4) {
+                    toast('拒绝授权');
+                } else {
+                    toast("未知错误，错误码：" + err.code);
+                }
+            }
+        });
+    }
+    function share(j) {
+        var buttons1 = [
+            {
+                text: '分享到',
+                label: true
+            },
+            {
+                text: 'QQ（暂不支持）',
+                onClick: function () {
+                    toast("由于权限原因，暂不支持");
+                }
+            },
+            {
+                text: '微博',
+                onClick: function () {
+                    var weibo = api.require('weibo');
+                    weibo.shareText({
+                        text: '景点：' + citylist[j] + '  介绍：' + introducelist[j]
+                    }, function (ret, err) {
+                        if (ret.status) {
+                            toast('分享成功');
+                        } else if (err.code === 1) {
+                            toast("已取消分享");
+                        } else {
+                            toast("分享失败，错误代码：" + err.code);
+                        }
+                    });
+                }
+            },
+            {
+                text: '微信朋友圈',
+                onClick: function () {
+                    checkwechat(j);
+                }
+            }
+        ];
+        var buttons2 = [
+            {
+                text: '取消'
+            }
+        ];
+        var groups = [buttons1, buttons2];
+        $.actions(groups);
+    }
+    function detail(index) {
+        api.openWin({
+            name: 'openrecommenddetail',
+            url: 'recommenddetail_window.html',
+            vScrollBarEnabled: false,
+            hScrollBarEnabled: false,
+            pageParam: {
+                index: index
+            }
         });
     }
 </script>

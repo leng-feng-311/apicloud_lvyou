@@ -1,68 +1,69 @@
-<!doctype html>	
-<html>	
-<head>	
-    <meta charset="utf-8">	
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>	
-    <title>login_window</title>	
-    	
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>login_window</title>
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1455934805_0033045.css">	
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1455934805_0033045.css">
     <style>
-     .iconfont {
-        font-size:30px;
-        font-style:normal;
-        margin-bottom:7px;
-      }
+        .iconfont {
+            font-size: 30px;
+            font-style: normal;
+            margin-bottom: 7px;
+        }
     </style>
-</head>	
-<body>	
-  <header class="bar bar-nav" id="thridHeader" style="background-color: #886AEA;">
-	  <button class="button button-link button-nav pull-left" onclick="closelogin()" style="color: white;">
-	   <span class="icon iconfont icon-cha"></span>
-	  </button>
-	  <button class="button button-link button-nav pull-right" style="color: white;">
-	         
-	  <span class="icon"></span>
-	  </button>
-	  <h1 class="title" style="color: white">登录</h1>
-  </header>
-</body>	
+</head>
+<body>
+<header class="bar bar-nav" id="thridHeader" style="background-color: #886AEA;">
+    <button class="button button-link button-nav pull-left" onclick="closelogin()" style="color: white;">
+        <span class="icon iconfont icon-cha"></span>
+    </button>
+    <button class="button button-link button-nav pull-right" style="color: white;">
+
+        <span class="icon"></span>
+    </button>
+    <h1 class="title" style="color: white">登录</h1>
+</header>
+</body>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-  <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type="text/javascript" src="../script/api.js"></script>	
-<script>	
-	function closelogin() {
-	    api.closeWin({
-	         animation: {
-			        type: 'push',
-			        subType: 'from_left',
-			        duration: 300
-	         }
-	     });
-	}
-	function openframe() {
-	    var thridHeader = $api.byId('thridHeader');	
-        $api.fixIos7Bar(thridHeader);	
-        var thridHeader = $api.offset(thridHeader);	
-        api.openFrame ({	
-            name: 'login_frame1',	
-            url: 'login_frame1.html',	
-            rect:{	
-                x:0,	
-                y:thridHeader.h-2,	
-                w:'auto',	
-                h:'auto'	
-            },	
-            bounces: false,	
-            vScrollBarEnabled: false,
-	        hScrollBarEnabled: false
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script>
+    function closelogin() {
+        api.closeWin({
+            animation: {
+                type: 'push',
+                subType: 'from_left',
+                duration: 300
+            }
         });
-	}
-    apiready = function(){	
+    }
+    function openframe() {
+        var thridHeader = $api.byId('thridHeader');
+        $api.fixIos7Bar(thridHeader);
+        var thridHeader = $api.offset(thridHeader);
+        api.openFrame({
+            name: 'login_frame1',
+            url: 'login_frame1.html',
+            rect: {
+                x: 0,
+                y: thridHeader.h - 2,
+                w: 'auto',
+                h: 'auto'
+            },
+            bounces: false,
+            vScrollBarEnabled: false,
+            hScrollBarEnabled: false
+        });
+    }
+    apiready = function () {
         openframe();
-    }	
-</script>	
+    }
+</script>
 </html>	

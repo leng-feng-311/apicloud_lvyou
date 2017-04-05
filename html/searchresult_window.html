@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <title>searchresult_window</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
     <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <style>
-    	html,body{
-    		background-color: #eee;
-    	}
+        html, body {
+            background-color: #eee;
+        }
     </style>
 </head>
 <body>
-	 <header class="bar bar-nav" id="thridHeader" style="background-color: #387EF5;">
-	  <button class="button button-link button-nav pull-left" onclick="closesearchresult()" style="color: white;">
-	  <span class="icon icon-left"></span>
-	    返回
-	  </button>
-	  <h1 class="title" style="color: white">搜索结果</h1>
-	</header> 	
+<header class="bar bar-nav" id="thridHeader" style="background-color: #387EF5;">
+    <button class="button button-link button-nav pull-left" onclick="closesearchresult()" style="color: white;">
+        <span class="icon icon-left"></span>
+        返回
+    </button>
+    <h1 class="title" style="color: white">搜索结果</h1>
+</header>
 </body>
-<script type="text/javascript" src="../script/api.js"></script>	
+<script type="text/javascript" src="../script/api.js"></script>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>	
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type="text/javascript">
-	apiready = function(){
-	     $.showIndicator();
-	       setTimeout(function () {
-	          $.hideIndicator();
-	      }, 2000);
-		var thridHeader = $api.byId('thridHeader');	
-	    $api.fixIos7Bar(thridHeader);	
-	    var thridHeader = $api.offset(thridHeader);	
-	    api.openFrame ({	
-	            name: 'searchresult_frame1',	
-	            url: 'searchresult_frame1.html',	
-	            rect:{	
-	                x:0,	
-	                y:thridHeader.h - 2,	
-	                w:'auto',	
-	                h:'auto'	
-	            },
-	            pageParam: {
-					        index:api.pageParam.index
-					   },	
-	            bounces: false,	
-	            delay:200,
-	            vScrollBarEnabled: false,
-		        hScrollBarEnabled: false
-	        });
-	};
-	function closesearchresult() {
-     api.closeWin({
-         animation: {
-		        type: 'push',
-		        subType: 'from_left',
-		        duration: 300
-         }
-     });
+    apiready = function () {
+        $.showIndicator();
+        setTimeout(function () {
+            $.hideIndicator();
+        }, 2000);
+        var thridHeader = $api.byId('thridHeader');
+        $api.fixIos7Bar(thridHeader);
+        var thridHeader = $api.offset(thridHeader);
+        api.openFrame({
+            name: 'searchresult_frame1',
+            url: 'searchresult_frame1.html',
+            rect: {
+                x: 0,
+                y: thridHeader.h - 2,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                index: api.pageParam.index
+            },
+            bounces: false,
+            delay: 200,
+            vScrollBarEnabled: false,
+            hScrollBarEnabled: false
+        });
+    };
+    function closesearchresult() {
+        api.closeWin({
+            animation: {
+                type: 'push',
+                subType: 'from_left',
+                duration: 300
+            }
+        });
     }
 </script>
 </html>

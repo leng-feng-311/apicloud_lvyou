@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../css/aui.css" />
-	<meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <title>recommenddetail_frame1</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -11,204 +12,209 @@
     <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
     <style>
-    	html,body{
-    		background-color: #EEEEEE;
-    		font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
-    	}
-    	h5{
-    	    font-weight: bolder;
-    	    font-size: 20px;
-    	    border-bottom: 1px dotted #404144;
-    	}
-    	.list-block{
-    	    margin-top: 200px;
-    	    margin-bottom: -25px;
-    	}
-    	.mybutn{
-    	    color: #404144;
-    	    border-radius: 5px;
-    	    padding: 2px;
-    	}
-    	.none, .mycard{
-    	    display: none;
-    	}
-    	.mytimeline{
-    	     background-color: #EEEEEE !important;
-    	     padding: 15px !important;
-    	     display: none;
-    	}
+        html, body {
+            background-color: #EEEEEE;
+            font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+        }
+
+        h5 {
+            font-weight: bolder;
+            font-size: 20px;
+            border-bottom: 1px dotted #404144;
+        }
+
+        .list-block {
+            margin-top: 200px;
+            margin-bottom: -25px;
+        }
+
+        .mybutn {
+            color: #404144;
+            border-radius: 5px;
+            padding: 2px;
+        }
+
+        .none, .mycard {
+            display: none;
+        }
+
+        .mytimeline {
+            background-color: #EEEEEE !important;
+            padding: 15px !important;
+            display: none;
+        }
     </style>
 </head>
 <body>
 <!--	<div class="content-padded">
        <center><h2 id="title"></h2></center>
        <p id="subtitle"></p>
-    </div>-->  
-  <div class="list-block">
+    </div>-->
+<div class="list-block">
     <ul>
-      <li class="item-content">
-        <div class="item-inner">
-          <div class="item-title">景点介绍</div>
-          <div class="item-after">
-            <a href="#" id="three" class="aui-btn mybutn" onclick="show()">点击查看</a>
-            <a href="#" id="four" class="aui-btn mybutn none" onclick="hide()">点击收起</a>
-          </div>
-        </div>
-      </li>
+        <li class="item-content">
+            <div class="item-inner">
+                <div class="item-title">景点介绍</div>
+                <div class="item-after">
+                    <a href="#" id="three" class="aui-btn mybutn" onclick="show()">点击查看</a>
+                    <a href="#" id="four" class="aui-btn mybutn none" onclick="hide()">点击收起</a>
+                </div>
+            </div>
+        </li>
     </ul>
     <div class="card mycard" id="mycard">
-      <div class="card-content">
-        <div class="card-content-inner">
-          <h5 id="baike"></h5><br />
-               <div class="content-padded" >
-                 <p id="jieshao" style="color: #404144;"></p>
-               </div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <h5 id="baike"></h5><br/>
+                <div class="content-padded">
+                    <p id="jieshao" style="color: #404144;"></p>
+                </div>
+            </div>
         </div>
-      </div>
-      <ul class="aui-list-view aui-grid-view">
-        <li class="aui-list-view-cell aui-img aui-col-xs-6">
-            <img class="aui-img-object" src="../image/demo4.png">
-            <div class="aui-img-body">
-                                      图片
-            </div>
-        </li>
-        <li class="aui-list-view-cell aui-img aui-col-xs-6">
-            <img class="aui-img-object" src="../image/demo4.png">
-            <div class="aui-img-body">
-                                      图片
-            </div>
-        </li>
-      </ul>
+        <ul class="aui-list-view aui-grid-view">
+            <li class="aui-list-view-cell aui-img aui-col-xs-6">
+                <img class="aui-img-object" src="../image/demo4.png">
+                <div class="aui-img-body">
+                    图片
+                </div>
+            </li>
+            <li class="aui-list-view-cell aui-img aui-col-xs-6">
+                <img class="aui-img-object" src="../image/demo4.png">
+                <div class="aui-img-body">
+                    图片
+                </div>
+            </li>
+        </ul>
     </div>
- 
-  </div>
 
-  <div class="content-block-title">
-              去那儿
-  </div>  
-  <div class="list-block">
+</div>
+
+<div class="content-block-title">
+    去那儿
+</div>
+<div class="list-block">
     <ul>
-      <li class="item-content">
-        <div class="item-inner">
-          <div class="item-title">公交规划</div>
-          <div class="item-after">
-               <a href="#" id="one" class="aui-btn mybutn" onclick="guihuafangan()">线路演示</a>
-               <a href="#" id="two" class="aui-btn mybutn none" onclick="showluxian()">换乘方案</a>
-               <a href="#" id="five" class="aui-btn mybutn none" onclick="hideluxian()">收起方案</a>
-          </div>
-        </div>
-      </li>
-      <li class="item-content">
-        <div class="item-inner">
-          <div class="item-title">
-                                 驾车导航
-            <a id="badge"></a>
-          </div>
-          <div class="item-after">
-            <a href="#" class="aui-btn mybutn" onclick="daohang()">开始导航</a>
-          </div>
-        </div>
-      </li>
+        <li class="item-content">
+            <div class="item-inner">
+                <div class="item-title">公交规划</div>
+                <div class="item-after">
+                    <a href="#" id="one" class="aui-btn mybutn" onclick="guihuafangan()">线路演示</a>
+                    <a href="#" id="two" class="aui-btn mybutn none" onclick="showluxian()">换乘方案</a>
+                    <a href="#" id="five" class="aui-btn mybutn none" onclick="hideluxian()">收起方案</a>
+                </div>
+            </div>
+        </li>
+        <li class="item-content">
+            <div class="item-inner">
+                <div class="item-title">
+                    驾车导航
+                    <a id="badge"></a>
+                </div>
+                <div class="item-after">
+                    <a href="#" class="aui-btn mybutn" onclick="daohang()">开始导航</a>
+                </div>
+            </div>
+        </li>
     </ul>
 
-	<ul class="aui-timeline mytimeline" id="mytimeline">
-		<li class="aui-time-label">
+    <ul class="aui-timeline mytimeline" id="mytimeline">
+        <li class="aui-time-label">
 			<span class="aui-bg-info">
 				当前位置——<a id="zhongdian" style="color: white;"></a>
 			</span>
-		</li>
-		<li>
-			<div class="aui-time-label aui-bg-info">11-21</div>
-			<div class="aui-timeline-item">
-				<span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
-				<h3 class="aui-timeline-header">标题标题标题标题标题</h3>
-				<div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
-				<div class="aui-timeline-footer">
-					底部信息
-				</div>
-			</div>
-		</li>
-		<li>
-			<i class="aui-iconfont aui-icon-home aui-bg-info"></i>
-			<div class="aui-timeline-item">
-				<span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
-				<h3 class="aui-timeline-header">标题标题标题标题标题</h3>
-				<div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
-				<div class="aui-timeline-footer">
-					底部信息
-				</div>
-			</div>
-		</li>
-		<li>
-			<i class="aui-iconfont aui-icon-home aui-bg-warning"></i>
-			<div class="aui-timeline-item">
-				<span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
-				<h3 class="aui-timeline-header">标题标题标题标题标题</h3>
-				<div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
-				<div class="aui-timeline-footer">
-					底部信息
-				</div>
-			</div>
-		</li>
-		<li class="aui-time-label">
+        </li>
+        <li>
+            <div class="aui-time-label aui-bg-info">11-21</div>
+            <div class="aui-timeline-item">
+                <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                <h3 class="aui-timeline-header">标题标题标题标题标题</h3>
+                <div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
+                <div class="aui-timeline-footer">
+                    底部信息
+                </div>
+            </div>
+        </li>
+        <li>
+            <i class="aui-iconfont aui-icon-home aui-bg-info"></i>
+            <div class="aui-timeline-item">
+                <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                <h3 class="aui-timeline-header">标题标题标题标题标题</h3>
+                <div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
+                <div class="aui-timeline-footer">
+                    底部信息
+                </div>
+            </div>
+        </li>
+        <li>
+            <i class="aui-iconfont aui-icon-home aui-bg-warning"></i>
+            <div class="aui-timeline-item">
+                <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                <h3 class="aui-timeline-header">标题标题标题标题标题</h3>
+                <div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
+                <div class="aui-timeline-footer">
+                    底部信息
+                </div>
+            </div>
+        </li>
+        <li class="aui-time-label">
 			<span class="aui-bg-warning">
 				2015.11.21
 			</span>
-		</li>
-		<li>
-			<div class="aui-time-label aui-bg-success">11-21</div>
-			<div class="aui-timeline-item">
-				<span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
-				<h3 class="aui-timeline-header">标题标题标题标题标题</h3>
-				<div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
-				<div class="aui-timeline-footer">
-					底部信息
-				</div>
-			</div>
-		</li>
-		<li>
-			<i class="aui-iconfont aui-icon-home aui-bg-info"></i>
-			<div class="aui-timeline-item">
-				<span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
-				<h3 class="aui-timeline-header">标题标题标题标题标题</h3>
-				<div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
-				<div class="aui-timeline-footer">
-					底部信息
-				</div>
-			</div>
-		</li>
-	</ul>
-    
-  </div>
-  <div class="content-block-title">
-                               发现（附近）
-  </div>
-  <ul class="aui-grid-nine">
-  	<li class="aui-col-xs-4 aui-text-center">
-  		<span class="aui-iconfont aui-icon-edit aui-text-primary"></span>
-  		<p>餐厅<a id="0">0</a></p>
-  	</li>
-  	<li class="aui-col-xs-4 aui-text-center">
-  		<span class="aui-iconfont aui-icon-shop aui-text-danger"></span>
-  		<p>住宿<a id="1">0</a></p>
-  	</li>
-  	<li class="aui-col-xs-4 aui-text-center">
-  		<span class="aui-iconfont aui-icon-camera aui-text-warning"></span>
-  		<p>园区<a id="2">0</a></p>
-  	</li>
-  	<li class="aui-col-xs-4 aui-text-center">
-  		<span class="aui-iconfont aui-icon-game aui-text-pink"></span>
-  		<p>娱乐<a id="3">0</a></p>
-  	</li>
-  	<li class="aui-col-xs-4 aui-text-center">
-  		<span class="aui-iconfont aui-icon-taxi aui-text-dark"></span>
-  		<p>交通<a id="4">0</a></p>
-  	</li>
-  	<li class="aui-col-xs-4 aui-text-center">
-  		<span class="aui-iconfont aui-icon-cart aui-text-info"></span>
-  		<p>购物<a id="5">0</a></p>
-  	</li>
-  </ul>
+        </li>
+        <li>
+            <div class="aui-time-label aui-bg-success">11-21</div>
+            <div class="aui-timeline-item">
+                <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                <h3 class="aui-timeline-header">标题标题标题标题标题</h3>
+                <div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
+                <div class="aui-timeline-footer">
+                    底部信息
+                </div>
+            </div>
+        </li>
+        <li>
+            <i class="aui-iconfont aui-icon-home aui-bg-info"></i>
+            <div class="aui-timeline-item">
+                <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                <h3 class="aui-timeline-header">标题标题标题标题标题</h3>
+                <div class="aui-timeline-body">时间轴内容时间轴内容时间轴内容时间轴内容时间轴内容</div>
+                <div class="aui-timeline-footer">
+                    底部信息
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+<div class="content-block-title">
+    发现（附近）
+</div>
+<ul class="aui-grid-nine">
+    <li class="aui-col-xs-4 aui-text-center">
+        <span class="aui-iconfont aui-icon-edit aui-text-primary"></span>
+        <p>餐厅<a id="0">0</a></p>
+    </li>
+    <li class="aui-col-xs-4 aui-text-center">
+        <span class="aui-iconfont aui-icon-shop aui-text-danger"></span>
+        <p>住宿<a id="1">0</a></p>
+    </li>
+    <li class="aui-col-xs-4 aui-text-center">
+        <span class="aui-iconfont aui-icon-camera aui-text-warning"></span>
+        <p>园区<a id="2">0</a></p>
+    </li>
+    <li class="aui-col-xs-4 aui-text-center">
+        <span class="aui-iconfont aui-icon-game aui-text-pink"></span>
+        <p>娱乐<a id="3">0</a></p>
+    </li>
+    <li class="aui-col-xs-4 aui-text-center">
+        <span class="aui-iconfont aui-icon-taxi aui-text-dark"></span>
+        <p>交通<a id="4">0</a></p>
+    </li>
+    <li class="aui-col-xs-4 aui-text-center">
+        <span class="aui-iconfont aui-icon-cart aui-text-info"></span>
+        <p>购物<a id="5">0</a></p>
+    </li>
+</ul>
 </body>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
@@ -222,261 +228,262 @@
     var a;
     var b;
     var lon = localStorage.mylon;
-	var lat = localStorage.mylat;
+    var lat = localStorage.mylat;
     function loading() {
-		    $.showPreloader('正在加载...')
-		    setTimeout(function () {
-		        $.hidePreloader();
-		    },1000);
-	}
-	function daohang(){
+        $.showPreloader('正在加载...')
+        setTimeout(function () {
+            $.hidePreloader();
+        }, 1000);
+    }
+    function daohang() {
         loading();
         var baiduNavigation = api.require('baiduNavigation');
-			baiduNavigation.start({
-			    start: { // 起点信息.
-			        position: { // 经纬度，与address配合可为空
-			            lon: lon, // 经度.
-			            lat: lat // 纬度.
-			        }
-			    },
-			    end: { // 终点信息.
-			        position: { // 经纬度，与address配合可为空
-				        lon: a, // 经度
-				        lat: b // 纬度
-			        }
-			    }
-			}, function(ret, err){
-			    if(ret.status){
-			        api.alert({
-			            title: "提示",
-			            msg:'导航成功'
-			        });
-			    }else{
-			        if(1 == err.code){
-			            toast("获取地理位置失败");
-			        }
-			        if(2 == err.code){
-			            toast("定位服务未开启");
-			        }
-			        if(3 == err.code){
-			            toast("线路取消");
-			        }
-			        if(4 == err.code){
-			            toast("已退出导航");
-			        }
-			        else{
-			            toast("导航出错");
-			        };
-			    }
-			});
-	}
-	function toast(tst) {
-        api.toast({
-	        msg: tst
+        baiduNavigation.start({
+            start: { // 起点信息.
+                position: { // 经纬度，与address配合可为空
+                    lon: lon, // 经度.
+                    lat: lat // 纬度.
+                }
+            },
+            end: { // 终点信息.
+                position: { // 经纬度，与address配合可为空
+                    lon: a, // 经度
+                    lat: b // 纬度
+                }
+            }
+        }, function (ret, err) {
+            if (ret.status) {
+                api.alert({
+                    title: "提示",
+                    msg: '导航成功'
+                });
+            } else {
+                if (1 == err.code) {
+                    toast("获取地理位置失败");
+                }
+                if (2 == err.code) {
+                    toast("定位服务未开启");
+                }
+                if (3 == err.code) {
+                    toast("线路取消");
+                }
+                if (4 == err.code) {
+                    toast("已退出导航");
+                }
+                else {
+                    toast("导航出错");
+                }
+                ;
+            }
         });
     }
-	function search(){
-	    var map = api.require('bMap');
-	    document.getElementById("baike").innerHTML = citylist[index];
-	    document.getElementById("jieshao").innerHTML = introducelist[index];
-	    document.getElementById("zhongdian").innerHTML = citylist[index];
-			map.searchInCity({
-			    city: localStorage.city,
-			    keyword: citylist[index],
-			    pageIndex: 0,
-			    pageCapacity: 1
-			},function(ret){
-			    if(ret.status){
-			       a = ret["results"][0].lon;
-			       b = ret["results"][0].lat;
-			       distance(a,b);
-			       discover(a,b);
-			        map.open({
-				    rect: {
-				        x: 0,
-				        y: 0,
-				        w: api.winWidth,
-				        h: 200
-				    },
-				    center: {
-				        lon: a,
-				        lat: b
-				    },
-				    zoomLevel: 17,
-				    showUserLocation: true,
-				    fixedOn: api.frameName,
-				    fixed: true
-				}, function(ret){
-				    if(ret.status){
-				        map.addAnnotations({
-					    annotations: [{
-					        id: 1, lon: a, lat: b
-					    }],
-					    draggable: false
-					}, function(ret){
-					    if(ret){
-					        //alert(ret.id);
-					    }
-					});
-					map.addCircle({
-				    id: 2,
-				    center: {
-				        lon: a,
-				        lat: b
-				    },
-				    radius: 300,
-				    styles: {
-				        borderColor: 'rgb(236, 85, 85)',
-				        borderWidth: 1,
-				        fillColor:'rgba(212, 132, 132, 0.5)'
-				    }
-				});
-				    }
-				});
-			    }else{
-			        alert(JSON.stringify(err));
-			    }
-			});
-
-	}
-   function draw(){
+    function toast(tst) {
+        api.toast({
+            msg: tst
+        });
+    }
+    function search() {
         var map = api.require('bMap');
-	    map.drawRoute({
-	    id: 3,
-	    autoresizing:true,
-	    index: 0,
-	    styles: {
-	        start: {
-	            icon: ''
-	        },
-	        end: {
-	            icon: ''
-	        }
-	    }
-	}, function(ret){
-	
-	});
-   }
-   function guihuafangan(){
-	    var map = api.require('bMap');
-			map.searchRoute({
-			    id: 3,
-			    type: 'transit',
-			    policy: 'ebus_time_first',
-			    start: {
-			        lon: lon,
-			        lat: lat
-			    },
-			    end: {
-			        lon: a,
-			        lat: b
-			    }
-			}, function(ret, err){
-			    if(ret.status){
-			        draw();
-			        route = ret["plans"];
-			        var luxianbtn = $api.byId('one');
-			        var huanchenbtn = $api.byId('two');
-			        luxianbtn.style.display = "none";
-			        huanchenbtn.style.display = "block";
-			    }
-			});
-	}
-	function show(){
+        document.getElementById("baike").innerHTML = citylist[index];
+        document.getElementById("jieshao").innerHTML = introducelist[index];
+        document.getElementById("zhongdian").innerHTML = citylist[index];
+        map.searchInCity({
+            city: localStorage.city,
+            keyword: citylist[index],
+            pageIndex: 0,
+            pageCapacity: 1
+        }, function (ret) {
+            if (ret.status) {
+                a = ret["results"][0].lon;
+                b = ret["results"][0].lat;
+                distance(a, b);
+                discover(a, b);
+                map.open({
+                    rect: {
+                        x: 0,
+                        y: 0,
+                        w: api.winWidth,
+                        h: 200
+                    },
+                    center: {
+                        lon: a,
+                        lat: b
+                    },
+                    zoomLevel: 17,
+                    showUserLocation: true,
+                    fixedOn: api.frameName,
+                    fixed: true
+                }, function (ret) {
+                    if (ret.status) {
+                        map.addAnnotations({
+                            annotations: [{
+                                id: 1, lon: a, lat: b
+                            }],
+                            draggable: false
+                        }, function (ret) {
+                            if (ret) {
+                                //alert(ret.id);
+                            }
+                        });
+                        map.addCircle({
+                            id: 2,
+                            center: {
+                                lon: a,
+                                lat: b
+                            },
+                            radius: 300,
+                            styles: {
+                                borderColor: 'rgb(236, 85, 85)',
+                                borderWidth: 1,
+                                fillColor: 'rgba(212, 132, 132, 0.5)'
+                            }
+                        });
+                    }
+                });
+            } else {
+                alert(JSON.stringify(err));
+            }
+        });
+
+    }
+    function draw() {
+        var map = api.require('bMap');
+        map.drawRoute({
+            id: 3,
+            autoresizing: true,
+            index: 0,
+            styles: {
+                start: {
+                    icon: ''
+                },
+                end: {
+                    icon: ''
+                }
+            }
+        }, function (ret) {
+
+        });
+    }
+    function guihuafangan() {
+        var map = api.require('bMap');
+        map.searchRoute({
+            id: 3,
+            type: 'transit',
+            policy: 'ebus_time_first',
+            start: {
+                lon: lon,
+                lat: lat
+            },
+            end: {
+                lon: a,
+                lat: b
+            }
+        }, function (ret, err) {
+            if (ret.status) {
+                draw();
+                route = ret["plans"];
+                var luxianbtn = $api.byId('one');
+                var huanchenbtn = $api.byId('two');
+                luxianbtn.style.display = "none";
+                huanchenbtn.style.display = "block";
+            }
+        });
+    }
+    function show() {
         var mycard = $api.byId('mycard');
         mycard.style.display = "block";
         var three = $api.byId('three');
         three.style.display = "none";
         var four = $api.byId('four');
         four.style.display = "block";
-	}
-	function hide(){
-	    var mycard = $api.byId('mycard');
+    }
+    function hide() {
+        var mycard = $api.byId('mycard');
         mycard.style.display = "none";
         var three = $api.byId('three');
         three.style.display = "block";
         var four = $api.byId('four');
         four.style.display = "none";
-	}
-	function showluxian(){
-	    //alert(JSON.stringify(route));
-	    var mytimeline = $api.byId('mytimeline');
+    }
+    function showluxian() {
+        //alert(JSON.stringify(route));
+        var mytimeline = $api.byId('mytimeline');
         mytimeline.style.display = "block";
         var two = $api.byId('two');
         two.style.display = "none";
         var five = $api.byId('five');
         five.style.display = "block";
-	}
-	function hideluxian(){
-	    var mytimeline = $api.byId('mytimeline');
+    }
+    function hideluxian() {
+        var mytimeline = $api.byId('mytimeline');
         mytimeline.style.display = "none";
         var two = $api.byId('two');
         two.style.display = "block";
         var five = $api.byId('five');
         five.style.display = "none";
-	}
-	function distance(c,d){
-	    var map = api.require('bMap');
-		map.getDistance({
-		    start: {
-		        lon: lon,
-		        lat: lat
-		    },
-		    end: {
-		        lon: c,
-		        lat: d
-		    }
-		},function(ret){
-		    if(ret.status){
-		        document.getElementById("badge").innerHTML = "~" + Math.floor(ret.distance / 1000 + 20) + "km";
-		    }
-		});
-	}
-	function discover(e,f){
-	    var p = 0;
-	    var arr = new Array();
-	    arr[0] = "饭店";
-	    arr[1] = "宾馆";
-	    arr[2] = "公园";
-	    arr[3] = "ktv";
-	    arr[4] = "公交";
-	    arr[5] = "超市";
-	    for(var l = 0;l < 6;l++){
-	        var map = api.require('bMap');
-			map.searchNearby({
-			    keyword: arr[l],
-			    lon: e,
-			    lat: f,
-			    radius: 500
-			},function(ret,err){
-			    if(ret.status){
-			        document.getElementById(p).innerHTML = ret.totalNum;
-			        p++;
-			    }else{
-			        
-			    }
-			});
-	    }
-	}
-	apiready = function(){
-	    index = api.pageParam.index;
-		search();
-		loading();
+    }
+    function distance(c, d) {
+        var map = api.require('bMap');
+        map.getDistance({
+            start: {
+                lon: lon,
+                lat: lat
+            },
+            end: {
+                lon: c,
+                lat: d
+            }
+        }, function (ret) {
+            if (ret.status) {
+                document.getElementById("badge").innerHTML = "~" + Math.floor(ret.distance / 1000 + 20) + "km";
+            }
+        });
+    }
+    function discover(e, f) {
+        var p = 0;
+        var arr = new Array();
+        arr[0] = "饭店";
+        arr[1] = "宾馆";
+        arr[2] = "公园";
+        arr[3] = "ktv";
+        arr[4] = "公交";
+        arr[5] = "超市";
+        for (var l = 0; l < 6; l++) {
+            var map = api.require('bMap');
+            map.searchNearby({
+                keyword: arr[l],
+                lon: e,
+                lat: f,
+                radius: 500
+            }, function (ret, err) {
+                if (ret.status) {
+                    document.getElementById(p).innerHTML = ret.totalNum;
+                    p++;
+                } else {
+
+                }
+            });
+        }
+    }
+    apiready = function () {
+        index = api.pageParam.index;
+        search();
+        loading();
 //		document.getElementById('title').innerHTML = citylist[index];
 //		document.getElementById('subtitle').innerHTML = "";
 
-		
-		api.addEventListener({
-		    name:'swiperight'
-		},function(ret,err){
-		         api.closeWin({
-         animation: {
-			        type: 'push',
-			        subType: 'from_left',
-			        duration: 300
-	         }
-	     });
-		});
-	};
+
+        api.addEventListener({
+            name: 'swiperight'
+        }, function (ret, err) {
+            api.closeWin({
+                animation: {
+                    type: 'push',
+                    subType: 'from_left',
+                    duration: 300
+                }
+            });
+        });
+    };
 </script>
 </html>

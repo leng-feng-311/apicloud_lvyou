@@ -1,17 +1,18 @@
-<!DOCTYPE html>	
-<html>	
-<head>	
-	<meta charset="utf-8">	
-	<title>news_frame2</title>	
-	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>	
-	<link rel="stylesheet" type="text/css" href="../css/api.css" />	
-    <link rel="stylesheet" type="text/css" href="../css/common.css" />
-    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">	
-	
-</head>	
-<body>	
-</body>	
-<script type="text/javascript" src="../script/api.js"></script>	
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>news_frame2</title>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+
+</head>
+<body>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type="text/javascript">
@@ -19,193 +20,195 @@
     var result;
     var cc;
     var temp = localStorage.hota;
-    if(temp !== "hotjudge"){
-	       newsarray = 
-	                [
-	                  {
-				        imgPath: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
-				        title: '最热新闻一',
-				        subTitle: '最热新闻一，本地数据测试',
-				        icon: ''
-				      }
-				    ];
-    }else{
-       newsarray = JSON.parse(localStorage.hotnews);
-       cc = newsarray.length;
-    };
-    apiready = function() {
-      api.addEventListener({
-		    name:'swiperight'
-		},function(ret,err){
-		         api.closeWin({
-         animation: {
-			        type: 'push',
-			        subType: 'from_left',
-			        duration: 300
-	         }
-	     });
-		});
-		
-		list();
-		refresh();
+    if (temp !== "hotjudge") {
+        newsarray =
+            [
+                {
+                    imgPath: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
+                    title: '最热新闻一',
+                    subTitle: '最热新闻一，本地数据测试',
+                    icon: ''
+                }
+            ];
+    } else {
+        newsarray = JSON.parse(localStorage.hotnews);
+        cc = newsarray.length;
+    }
+    ;
+    apiready = function () {
+        api.addEventListener({
+            name: 'swiperight'
+        }, function (ret, err) {
+            api.closeWin({
+                animation: {
+                    type: 'push',
+                    subType: 'from_left',
+                    duration: 300
+                }
+            });
+        });
+
+        list();
+        refresh();
     }
     function loading() {
-			api.showProgress({
-			    style: 'default',
-			    animationType: 'fade',
-			    title: '努力加载中...',
-			    modal: true
-			});
+        api.showProgress({
+            style: 'default',
+            animationType: 'fade',
+            title: '努力加载中...',
+            modal: true
+        });
     }
     function list() {
         var UIListView = api.require('UIListView');
-			UIListView.open({
-			    rect: {
-			        x: 0,
-			        y: 0,
-			        w: api.winWidth,
-			        h: 480
-			    },
-			    data: newsarray,
-			    styles: {
-			        borderColor: '#eee',
-			        item: {
-			            bgColor: '#fff',
-			            activeBgColor: '#F5F5F5',
-			            height: 60.0,
-			            imgWidth: 40,
-			            imgHeight: 40,
-			            imgCorner: 5,
-			            placeholderImg: '',
-			            titleSize: 12.0,
-			            titleColor: '#404144',
-			            subTitleSize: 12.0,
-			            subTitleColor: '#404144'
-			        }
-			    },
-			    fixedOn: api.frameName
-			}, function( ret, err ){
-			    if( ret ){
-			        if(ret.index !== undefined){
-			           var index = ret.index;
-			           opennewsdetail(index);
-			        };
-			    }else{
-			        alert( JSON.stringify( err ) );
-			    }
-			});
+        UIListView.open({
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: 480
+            },
+            data: newsarray,
+            styles: {
+                borderColor: '#eee',
+                item: {
+                    bgColor: '#fff',
+                    activeBgColor: '#F5F5F5',
+                    height: 60.0,
+                    imgWidth: 40,
+                    imgHeight: 40,
+                    imgCorner: 5,
+                    placeholderImg: '',
+                    titleSize: 12.0,
+                    titleColor: '#404144',
+                    subTitleSize: 12.0,
+                    subTitleColor: '#404144'
+                }
+            },
+            fixedOn: api.frameName
+        }, function (ret, err) {
+            if (ret) {
+                if (ret.index !== undefined) {
+                    var index = ret.index;
+                    opennewsdetail(index);
+                }
+                ;
+            } else {
+                alert(JSON.stringify(err));
+            }
+        });
     }
     function opennewsdetail(index) {
         api.openWin({
-	        name: 'openhotnewsdetail',
-	        url: 'hotnewsdetail_window.html',
+            name: 'openhotnewsdetail',
+            url: 'hotnewsdetail_window.html',
             vScrollBarEnabled: false,
-	        hScrollBarEnabled: false,
-	        pageParam: {
-					        index:index
-					   }
+            hScrollBarEnabled: false,
+            pageParam: {
+                index: index
+            }
         });
     }
-    function refresh(){
-        if(temp === "hotjudge"){
-           getnews();
+    function refresh() {
+        if (temp === "hotjudge") {
+            getnews();
         }
         var UIListView = api.require('UIListView');
-			UIListView.setRefreshHeader({
-			    loadingImg: 'widget://image/jiantou.png',
-			    bgColor: '#404144',
-			    textColor: '#fff',
-			    textDown: '下拉刷新...',
-			    textUp: '松开刷新...',
-			    showTime: true
-			},function( ret, err ){
-			    if( ret ){
-			         reload();
-			    }
-			});
+        UIListView.setRefreshHeader({
+            loadingImg: 'widget://image/jiantou.png',
+            bgColor: '#404144',
+            textColor: '#fff',
+            textDown: '下拉刷新...',
+            textUp: '松开刷新...',
+            showTime: true
+        }, function (ret, err) {
+            if (ret) {
+                reload();
+            }
+        });
     }
     function getnews() {
         var model = api.require('model');
-		var query = api.require('query');
-		query.createQuery(function(ret, err) {
-		    if (ret && ret.qid) {
-		        var queryId = ret.qid;
-		        query.skip({qid:queryId, value:0});
-	          
-		        model.findAll({
-		            class: "hotnews",
-		            qid: queryId,
-		        },function(ret) {
-		            if (ret) {
-		                result = ret;
-		            }
-		          });
-		    }
-		});
+        var query = api.require('query');
+        query.createQuery(function (ret, err) {
+            if (ret && ret.qid) {
+                var queryId = ret.qid;
+                query.skip({qid: queryId, value: 0});
+
+                model.findAll({
+                    class: "hotnews",
+                    qid: queryId,
+                }, function (ret) {
+                    if (ret) {
+                        result = ret;
+                    }
+                });
+            }
+        });
     }
-    function reload(){
-       newsarray = 
-                  [
-	                  {
-				        imgPath: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
-				        title: '最热新闻一',
-				        subTitle: '最热新闻一，本地数据测试',
-				        icon: ''
-				      },
-				      {
-				        imgPath: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
-				        title: '最热新闻二',
-				        subTitle: '最热新闻二，本地数据测试',
-				        icon: ''
-				      }
-			      ]; 
-	    if(temp === "hotjudge"){
-	       for(var i = 0;i<= (result.length - 1);i++){
-	           var tempdata = {
-	                imgPath: result[i].imgPath,
-				    title: result[i].title,
-				    subTitle: result[i].subTitle,
-				    icon: result[i].icon
-	               };
-	            newsarray.push(tempdata);
-	       }  
-	    }
-	    localStorage.hotnews = JSON.stringify(newsarray);
-	    localStorage.hota = "hotjudge";
+    function reload() {
+        newsarray =
+            [
+                {
+                    imgPath: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
+                    title: '最热新闻一',
+                    subTitle: '最热新闻一，本地数据测试',
+                    icon: ''
+                },
+                {
+                    imgPath: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
+                    title: '最热新闻二',
+                    subTitle: '最热新闻二，本地数据测试',
+                    icon: ''
+                }
+            ];
+        if (temp === "hotjudge") {
+            for (var i = 0; i < (result.length); i++) {
+                var tempdata = {
+                    imgPath: result[i].imgPath,
+                    title: result[i].title,
+                    subTitle: result[i].subTitle,
+                    icon: result[i].icon
+                };
+                newsarray.push(tempdata);
+            }
+        }
+        localStorage.hotnews = JSON.stringify(newsarray);
+        localStorage.hota = "hotjudge";
         var UIListView = api.require('UIListView');
-			UIListView.reloadData({
-			     data: newsarray
-			},function(ret){
-			    if( ret ){
-			       if(newsarray.length > cc){
-			         toast(newsarray.length - cc);
-			       }else if(newsarray.length === cc){
-			         connectionType = api.connectionType;
-			         if(connectionType === "none"){
-			           toastthree();
-			         }else{
-			           toasttwo();
-			          } 
-			       }
-			    }else{
-			         alert( JSON.stringify( err ) );
-			    }
-			});
+        UIListView.reloadData({
+            data: newsarray
+        }, function (ret) {
+            if (ret) {
+                if (newsarray.length > cc) {
+                    toast(newsarray.length - cc);
+                } else if (newsarray.length === cc) {
+                    connectionType = api.connectionType;
+                    if (connectionType === "none") {
+                        toastthree();
+                    } else {
+                        toasttwo();
+                    }
+                }
+            } else {
+                alert(JSON.stringify(err));
+            }
+        });
     }
     function toast(x) {
         api.toast({
-	        msg:'成功刷新' + x + '条新闻'
+            msg: '成功刷新' + x + '条新闻'
         });
     }
     function toasttwo() {
         api.toast({
-	        msg:'没有更多了'
+            msg: '没有更多了'
         });
     }
     function toastthree() {
         api.toast({
-	        msg:'无网络连接，刷新失败'
+            msg: '无网络连接，刷新失败'
         });
     }
-</script>	
+</script>
 </html>	

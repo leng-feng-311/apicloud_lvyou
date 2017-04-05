@@ -2,13 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <title>index</title>
     <style>
         html {
             height: 100%;
             background-color: #fff;
         }
+
         body {
             background-color: #fff;
             padding: 0;
@@ -28,85 +30,88 @@
 </body>
 <script>
     function list(city) {
-	    var arr = new Array();
-	    var arrtwo = new Array();
+        var arr = new Array();
+        var arrtwo = new Array();
         var model = api.require('model');
-		var query = api.require('query');
-		query.createQuery(function(ret, err) {
-		    if (ret && ret.qid) {
-		        var queryId = ret.qid;
-		        query.whereEqual({
-		            qid: queryId,
-		            column: 'cityname',
-		            value: city
-	          });
-	          
-		        model.findAll({
-		            class: "recommend",
-		            qid: queryId,
-		        },function(ret) {
-		            if (ret) {
-		                for(var i = 0;i < ret.length;i++){
-		                  arr.push(ret[i].tourists);
-		                  arrtwo.push(ret[i].introduce);
-		                }
-		                localStorage.recommendlist = arr;
-		                localStorage.introducelist = arrtwo;
-		            }
-		          });
-		    }
-		});
+        model.config({
+            appKey: '8896460F-96DC-C333-9194-A050214891C9',
+            host: 'https://d.apicloud.com'
+        });
+        var query = api.require('query');
+        query.createQuery(function (ret, err) {
+            if (ret && ret.qid) {
+                var queryId = ret.qid;
+                query.whereEqual({
+                    qid: queryId,
+                    column: 'cityname',
+                    value: city
+                });
+
+                model.findAll({
+                    class: "recommend",
+                    qid: queryId,
+                }, function (ret) {
+                    if (ret) {
+                        for (var i = 0; i < ret.length; i++) {
+                            arr.push(ret[i].tourists);
+                            arrtwo.push(ret[i].introduce);
+                        }
+                        localStorage.recommendlist = arr;
+                        localStorage.introducelist = arrtwo;
+                    }
+                });
+            }
+        });
     }
     function bmap() {
         var bMap = api.require('bMap');
-			bMap.getLocation({
-			    accuracy: '10m',
-			    autoStop: true,
-			    filter: 1
-			}, function(ret, err){
-			    if(ret.status){
-			        var lon = ret.lon;
-			        var lat = ret.lat;
-			        bMap.getNameFromCoords({
-					    lon: lon,
-					    lat: lat
-					},function(ret){
-					    if(ret.status){
-					        //alert(JSON.stringify(ret));
-					        localStorage.mylon = lon;
-					        localStorage.mylat = lat;
-					        localStorage.city = ret.province;//存储所在省份
-					        localStorage.address = ret.address;//存储所在详细地址
-					        
-					        list(ret.province);
-					    }
-					})
-			    }else{
-			        alert(err.code);
-			    }
-			});
+        bMap.getLocation({
+            accuracy: '10m',
+            autoStop: true,
+            filter: 1
+        }, function (ret, err) {
+            if (ret.status) {
+                var lon = ret.lon;
+                var lat = ret.lat;
+                bMap.getNameFromCoords({
+                    lon: lon,
+                    lat: lat
+                }, function (ret) {
+                    if (ret.status) {
+                        //alert(JSON.stringify(ret));
+                        localStorage.mylon = lon;
+                        localStorage.mylat = lat;
+                        localStorage.city = ret.province;//存储所在省份
+                        localStorage.address = ret.address;//存储所在详细地址
+                        list(ret.province);
+                    }
+                })
+            } else {
+                alert(err.code);
+            }
+        });
     }
     apiready = function () {
         connectionType = api.connectionType;
-        if(connectionType === "none" && localStorage.firsttime !== "no"){
+        if (connectionType === "none" && localStorage.firsttime !== "no") {
             api.alert({
-			    title: '提示',
-			    msg: '当前无网络，初次加载失败',
-			    buttons: ['好的']
-			},function( ret, err ){
-			    if( ret ){
-			         if(ret.buttonIndex === 1){
-			             api.closeWidget({
-				             id: 'A6900603990772',
-				             retData: {name:'closeWidget'},
-				             silent:true
-			             });
-			         }
-			    }else{
-			         alert( JSON.stringify( err ) );
-			    }
-			});
-           }else{
+                title: '提示',
+                msg: '当前无网络，初次加载失败',
+                buttons: ['好的']
+            }, function (ret, err) {
+                if (ret) {
+                    if (ret.buttonIndex === 1) {
+                        api.closeWidget({
+                            id: 'A6900603990772',
+                            retData: {name: 'closeWidget'},
+                            silent: true
+                        });
+                    }
+                } else {
+                    alert(JSON.stringify(err));
+                }
+            });
+        } else {
             localStorage.firsttime = "no";
             api.openSlidLayout({
                 type: 'left',
@@ -114,14 +119,16 @@
                 fixedPane: {
                     name: 'home_fixed',
                     url: 'html/home_fixed.html',
-                    bounces:false
+                    bounces: false
                 },
                 slidPane: {
                     name: 'home_slide',
                     url: 'html/home_window.html'
                 }
-            });  
-        bmap();
+            });
+            //bmap();
+            localStorage.city = '上海市';
+            list('上海市');
         }
     }
 </script>

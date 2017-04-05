@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <title>newsdetail_frame1</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -10,49 +11,48 @@
     <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
     <style>
-    	body{
-    		
-    	}
+        body {
+
+        }
     </style>
 </head>
 <body>
-	<div class="content-padded">
-       <center><h2 id="title"></h2></center>
-       <p id="subtitle"></p>
-    </div>
+<div class="content-padded">
+    <center><h2 id="title"></h2></center>
+    <p id="subtitle"></p>
+</div>
 </body>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     function loading() {
-		    $.showPreloader('正在加载...')
-		    setTimeout(function () {
-		        $.hidePreloader();
-		    },1000);
-	}
-	apiready = function(){
-	    index = api.pageParam.index;
-	    var content = JSON.parse(localStorage.newnews);
-	    var detail = content[index];
-		loading();
-		
-		document.getElementById('title').innerHTML = detail.title;
-		document.getElementById('subtitle').innerHTML = detail.subTitle;
-		
-		
-		
-		api.addEventListener({
-		    name:'swiperight'
-		},function(ret,err){
-		         api.closeWin({
-         animation: {
-			        type: 'push',
-			        subType: 'from_left',
-			        duration: 300
-	         }
-	     });
-		});
-	};
+        $.showPreloader('正在加载...')
+        setTimeout(function () {
+            $.hidePreloader();
+        }, 1000);
+    }
+    apiready = function () {
+        index = api.pageParam.index;
+        var content = JSON.parse(localStorage.newnews);
+        var detail = content[index];
+        loading();
+
+        document.getElementById('title').innerHTML = detail.title;
+        document.getElementById('subtitle').innerHTML = detail.subTitle;
+
+
+        api.addEventListener({
+            name: 'swiperight'
+        }, function (ret, err) {
+            api.closeWin({
+                animation: {
+                    type: 'push',
+                    subType: 'from_left',
+                    duration: 300
+                }
+            });
+        });
+    };
 </script>
 </html>

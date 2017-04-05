@@ -23,7 +23,7 @@ function Swipe(container, options) {
         touch: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
         transitions: (function (temp) {
             var props = ['transitionProperty', 'WebkitTransition', 'MozTransition', 'OTransition', 'msTransition'];
-            for (var i in props) if (temp.style[ props[i] ] !== undefined) return true;
+            for (var i in props) if (temp.style[props[i]] !== undefined) return true;
             return false;
         })(document.createElement('swipe'))
     };
@@ -338,7 +338,7 @@ function Swipe(container, options) {
                         ( (!index && delta.x > 0               // if first slide and sliding left
                             || index == slides.length - 1        // or if last slide and sliding right
                             && delta.x < 0                       // and if sliding at all
-                            ) ?
+                        ) ?
                             ( Math.abs(delta.x) / width + 1 )      // determine resistance level
                             : 1 );                                 // no resistance if false
 
