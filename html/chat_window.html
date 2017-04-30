@@ -1,0 +1,67 @@
+<!doctype html>	
+<html>	
+<head>	
+    <meta charset="utf-8">	
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>	
+    <title>website_window</title>	
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>	
+    
+</head>	
+<body>	
+<header>	
+    <header class="bar bar-nav" id="thridHeader" style="background-color: #FFFFFF;">
+	  <button class="button button-link button-nav pull-left" onclick="closewebsite()" style="color: black;">
+	  <span class="icon icon-left"></span>
+	    返回
+	  </button>
+	  <h1 class="title" style="color: black">聊天社区</h1>
+	</header> 
+</header>	
+</body>	
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="../script/api.js"></script>	
+<script>	
+    function openframe() {
+        var thridHeader = $api.byId('thridHeader');	
+        $api.fixIos7Bar(thridHeader);	
+        var thridHeader = $api.offset(thridHeader);	
+        api.openFrame ({	
+            name: 'website',	
+            url: 'http://115.159.159.88:30653',	
+            rect:{	
+                x:0,	
+                y:thridHeader.h - 1,	
+                w:'auto',	
+                h:'auto'	
+            },	
+            bounces: false,	
+            vScrollBarEnabled: false,
+	        hScrollBarEnabled: false
+        });
+    }
+    function closewebsite() {
+     api.closeWin({
+         animation: {
+		        type: 'push',
+		        subType: 'from_left',
+		        duration: 300
+         }
+     });
+    }
+    function loading() {
+		    $.showPreloader('请稍等...')
+		    setTimeout(function () {
+		        $.hidePreloader();
+		    }, 1000);
+	}
+    apiready=function(){
+      openframe();  
+      loading();  
+    }	
+</script>
+</html>	

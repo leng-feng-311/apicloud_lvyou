@@ -1,484 +1,357 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <meta name="viewport"
-          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <title>category_frame1</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/aui-flex.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <script type="text/javascript" src="../script/api.js"></script>
-    <script type="text/javascript">
-        apiready = function () {
-            var one = document.getElementById("one");
-            one.style.height = api.winHeight * 0.83 + "px";
-            var two = document.getElementById("two");
-            two.style.height = api.winHeight * 0.83 + "px";
-            var three = document.getElementById("three");
-            three.style.display = "none";
-            var four = document.getElementById("four");
-            four.style.display = "none";
-            var five = document.getElementById("five");
-            five.style.display = "none";
-            var six = document.getElementById("six");
-            six.style.display = "none";
-            api.addEventListener({
-                name: 'swiperight'
-            }, function (ret, err) {
-                api.closeWin({
-                    animation: {
-                        type: 'push',
-                        subType: 'from_left',
-                        duration: 300
-                    }
-                });
-            });
-        };
-        function one() {
-            var two = document.getElementById("two");
-            two.style.display = "block";
-            two.style.height = api.winHeight * 0.83 + "px";
-            var three = document.getElementById("three");
-            three.style.display = "none";
-            var four = document.getElementById("four");
-            four.style.display = "none";
-            var five = document.getElementById("five");
-            five.style.display = "none";
-            var six = document.getElementById("six");
-            six.style.display = "none";
-        }
-        function two() {
-            var two = document.getElementById("two");
-            two.style.display = "none";
-            var three = document.getElementById("three");
-            three.style.display = "block";
-            three.style.height = api.winHeight * 0.83 + "px";
-            var four = document.getElementById("four");
-            four.style.display = "none";
-            var five = document.getElementById("five");
-            five.style.display = "none";
-            var six = document.getElementById("six");
-            six.style.display = "none";
-        }
-        function three() {
-            var two = document.getElementById("two");
-            two.style.display = "none";
-            var three = document.getElementById("three");
-            three.style.display = "none";
-            var four = document.getElementById("four");
-            four.style.display = "block";
-            four.style.height = api.winHeight * 0.83 + "px";
-            var five = document.getElementById("five");
-            five.style.display = "none";
-            var six = document.getElementById("six");
-            six.style.display = "none";
-        }
-        function four() {
-            var two = document.getElementById("two");
-            two.style.display = "none";
-            var three = document.getElementById("three");
-            three.style.display = "none";
-            var four = document.getElementById("four");
-            four.style.display = "none";
-            var five = document.getElementById("five");
-            five.style.display = "block";
-            five.style.height = api.winHeight * 0.83 + "px";
-            var six = document.getElementById("six");
-            six.style.display = "none";
-        }
-        function five() {
-            var two = document.getElementById("two");
-            two.style.display = "none";
-            var three = document.getElementById("three");
-            three.style.display = "none";
-            var four = document.getElementById("four");
-            four.style.display = "none";
-            var five = document.getElementById("five");
-            five.style.display = "none";
-            var six = document.getElementById("six");
-            six.style.display = "block";
-            six.style.height = api.winHeight * 0.83 + "px";
-        }
-        function categorydetail(x) {
-            var title = document.getElementById(x).innerText;
-            api.openWin({
-                name: 'categorydetail',
-                url: 'categorydetail_window.html',
-                vScrollBarEnabled: false,
-                hScrollBarEnabled: false,
-                pageParam: {
-                    index: title
-                }
-            });
-        }
-    </script>
+	<script type="text/javascript">
+		apiready = function(){
+	 	    var one = document.getElementById("one");
+	   	    one.style.height = api.winHeight * 0.83 + "px";
+	   	    var two = document.getElementById("two");
+	   	    two.style.height = api.winHeight * 0.83 + "px";
+	   	    var three = document.getElementById("three");
+	   	    three.style.display = "none";
+	   	    var four = document.getElementById("four");
+	   	    four.style.display = "none";
+	   	    var five = document.getElementById("five");
+	   	    five.style.display = "none";
+	   	    var six = document.getElementById("six");
+	   	    six.style.display = "none";
+			api.addEventListener({
+			    name:'swiperight'
+			},function(ret,err){
+			         api.closeWin({
+	         animation: {
+				        type: 'push',
+				        subType: 'from_left',
+				        duration: 300
+		         }
+		     });
+			});
+		};
+		function one(){
+		    var two = document.getElementById("two");
+		    two.style.display = "block";
+	   	    two.style.height = api.winHeight * 0.83 + "px";
+	   	    var three = document.getElementById("three");
+	   	    three.style.display = "none";
+	   	    var four = document.getElementById("four");
+	   	    four.style.display = "none";
+	   	    var five = document.getElementById("five");
+	   	    five.style.display = "none";
+	   	    var six = document.getElementById("six");
+	   	    six.style.display = "none";
+		}
+		function two(){
+		    var two = document.getElementById("two");
+	   	    two.style.display = "none";
+	   	    var three = document.getElementById("three");
+	   	    three.style.display = "block";
+	   	    three.style.height = api.winHeight * 0.83 + "px";
+	   	    var four = document.getElementById("four");
+	   	    four.style.display = "none";
+	   	    var five = document.getElementById("five");
+	   	    five.style.display = "none";
+	   	    var six = document.getElementById("six");
+	   	    six.style.display = "none";
+		}
+		function three(){
+		    var two = document.getElementById("two");
+	   	    two.style.display = "none";
+	   	    var three = document.getElementById("three");
+	   	    three.style.display = "none";
+	   	    var four = document.getElementById("four");
+	   	    four.style.display = "block";
+	   	    four.style.height = api.winHeight * 0.83 + "px";
+	   	    var five = document.getElementById("five");
+	   	    five.style.display = "none";
+	   	    var six = document.getElementById("six");
+	   	    six.style.display = "none";
+		}
+		function four(){
+		    var two = document.getElementById("two");
+	   	    two.style.display = "none";
+	   	    var three = document.getElementById("three");
+	   	    three.style.display = "none";
+	   	    var four = document.getElementById("four");
+	   	    four.style.display = "none";
+	   	    var five = document.getElementById("five");
+	   	    five.style.display = "block";
+	   	    five.style.height = api.winHeight * 0.83 + "px";
+	   	    var six = document.getElementById("six");
+	   	    six.style.display = "none";
+		}
+		function five(){
+		    var two = document.getElementById("two");
+	   	    two.style.display = "none";
+	   	    var three = document.getElementById("three");
+	   	    three.style.display = "none";
+	   	    var four = document.getElementById("four");
+	   	    four.style.display = "none";
+	   	    var five = document.getElementById("five");
+	   	    five.style.display = "none";
+	   	    var six = document.getElementById("six");
+	   	    six.style.display = "block";
+	   	    six.style.height = api.winHeight * 0.83 + "px";
+		}
+		function categorydetail(x){
+		    var title = document.getElementById(x).innerText;
+		    api.openWin({
+	        name: 'categorydetail',
+	        url: 'categorydetail_window.html',
+            vScrollBarEnabled: false,
+	        hScrollBarEnabled: false,
+	        pageParam: {
+					        index:title
+					   }
+        });
+		}
+	</script>
     <style type="text/css">
-        html, body {
-            background: #eee;
-        }
-
-        .aui-content {
-            margin-bottom: 0px;
-        }
-
-        .demo-box {
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .demo-box::-webkit-scrollbar {
-            width: 0px;
-            height: 0px;
-            visibility: hidden;
-        }
-
-        .aui-flex-item-3 {
-            border-right: 1px solid #E0E0E0;
-        }
+    html,body {
+        background: #eee;
+    }
+    .aui-content{
+        margin-bottom: 0px;
+    }
+    .demo-box {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .demo-box::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
+    .aui-flex-item-3{
+        border-right: 1px solid #E0E0E0;
+    }
     </style>
 </head>
 <body>
-<div class="aui-content">
+<div class="aui-content" >
     <div class="aui-flex-col">
         <div class="aui-flex-item-3">
             <ul class="aui-list-view demo-box" style="margin-bottom: 0;" id="one">
-                <li class="aui-list-view-cell" onclick="one()">周边</li>
-                <li class="aui-list-view-cell" onclick="two()">文化</li>
-                <li class="aui-list-view-cell" onclick="three()">小吃</li>
-                <li class="aui-list-view-cell" onclick="four()">水乡</li>
-                <li class="aui-list-view-cell" onclick="five()">购物</li>
+                <li class="aui-list-view-cell" onclick="one()">推荐景点</li>
+                <li class="aui-list-view-cell" onclick="two()">文化简介</li>
+                <li class="aui-list-view-cell" onclick="three()">特色美食</li>
+                <li class="aui-list-view-cell" onclick="five()">观光购物</li>
             </ul>
         </div>
         <div class="aui-flex-item-9 aui-border-r">
             <ul class="aui-list-view demo-box" style="margin-bottom: 0;" id="two">
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://g.hiphotos.baidu.com/baike/w%3D268/sign=01e825e78526cffc692ab8b481004a7d/1c950a7b02087bf4bc7c0497f5d3572c11dfcf38.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/29753/20141113141439-1951802753.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(1)">
-                        周 庄
-                        <p class='aui-ellipsis-2' id="1">
-                            周庄位于苏州城东南，昆山的西南处，古称贞丰里。春秋战国时期，周庄境内为吴王少子摇的封地，称摇城。北宋元佑元年(1086年)周迪功郎舍宅200余亩捐于当地全福寺为寺，始称周庄，元代中期，沈万三利用周庄镇北白蚬江水运之便，通番贸易，周庄因此成为其粮食、丝绸、陶瓷、手工艺品的集散地，遂为江南巨镇。至清康熙初年正式定名为周庄镇。</p>
+                        故宫博物馆
+                        <p class='aui-ellipsis-2' id="1">沈阳故宫博物馆最早是清初皇宫。原名盛京宫阙，后称奉天行宫。在辽宁省沈阳市旧城中心。占地面积6万平方米，有建筑90余所，300余间，是中国现存仅次于北京故宫的最完整的皇宫建筑。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://e.hiphotos.baidu.com/baike/w%3D268/sign=9d43e0385466d0167e19992eaf2ad498/b64543a98226cffcba8fdc47bf014a90f703ea9a.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/15627/20150601151308-1320546553.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(2)">
-                        甪直古镇
-                        <p class='aui-ellipsis-2' id="2">
-                            甪直古镇隶属苏州市吴中区，位于苏州市东部，西距苏州城区18公里，东距上海58公里。甪直古镇是具有2500年历史的江南水乡古镇，水多，桥多，巷多，古宅多，名人多。主要的景点有保圣寺、叶圣陶纪念馆、江南文化园等。</p>
+                        天津古文化街
+                        <p class='aui-ellipsis-2' id="2">天津古文化街是中国天津市南开区的一条由仿中国清代民间小式店铺组成的商业步行街，原为以天津天后宫为中心的“宫南大街”和“宫北大街”，是天津最早的文化、宗教和商贸聚集之地。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://e.hiphotos.baidu.com/baike/w%3D268/sign=0ec30f4fd9f9d72a1764171bec2b282a/b3b7d0a20cf431addf6028494b36acaf2edd980b.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/0/20161026163239-2116413336.jpg/800">
                     <div class="aui-img-body" onclick="categorydetail(3)">
-                        西塘古镇
-                        <p class='aui-ellipsis-2' id="3">
-                            西塘古镇属浙江省嘉善县，地处江浙沪三省市交界处，地理位置优越。交通便捷，东距上海90公里，西距杭州110公里，北距苏州85公里</p>
+                        张家界国家森林公园
+                        <p class='aui-ellipsis-2' id="3">张家界国家森林公园是中国第一个国家级森林公园，距张家界市区32公里，东连索溪峪，北邻天子山，面积130平方公里，集神奇、钟秀、雄浑、原始、清新于一体，以岩称奇。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://a.hiphotos.baidu.com/baike/w%3D268/sign=e2345bc07df40ad115e4c0e56f2d1151/f31fbe096b63f624832f55fb8144ebf81b4ca3dc.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/20577/20150422131537-1891804459.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(4)">
-                        乌镇古镇
-                        <p class='aui-ellipsis-2' id="4">
-                            乌镇古镇是国家5A级景区，全国二十个黄金周预报景点及江南六大古镇之一。地处浙江省嘉兴市（地级市）桐乡市（县级市）北端，西临湖州市南浔区，北接江苏苏州吴江市，为二省（浙江，江苏）三市（嘉兴，湖州，苏州）交界之处。曾名乌墩和青墩，具有六千余年悠久历史。</p>
+                        上海野生动物园
+                        <p class='aui-ellipsis-2' id="4">上海野生动物园是由上海市人民政府和国家林业局合作建设的中国首座国家级野生动物园，位于上海浦东新区境内，展区占地153公顷（约2300亩），于1995年11月18日正式对外开放，是首批国家4A级旅游景区。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://h.hiphotos.baidu.com/baike/s%3D220/sign=b2176a703b01213fcb3349de64e636f8/cdbf6c81800a19d88339daac31fa828ba61e4664.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/0/ori-20160802161759-2002710145.jpg/800">
                     <div class="aui-img-body" onclick="categorydetail(5)">
-                        前童古镇
-                        <p class='aui-ellipsis-2' id="5">
-                            前童镇，始建于南宋绍定六年（公元1233年），地处浙江省宁海县西南，面积68平方公里，人口2.6万，是一个历史悠久，文化积淀深厚，地理环境独特的江南古镇，先后被命名为浙江省历史文化名镇和浙江省旅游城镇。</p>
+                        钟山风景名胜区
+                        <p class='aui-ellipsis-2' id="5">钟山风景区是中国著名的风景游览胜地、首批国家级风景名胜区、首批国家5A级旅游景区、中国旅游胜地四十佳，全区包括84个可供观光游览的景点，分为明孝陵景区、中山陵景区、灵谷景区、头陀岭景区和其他景点五大部分。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://d.hiphotos.baidu.com/baike/w%3D268/sign=2177581008d162d985ee651a29dea950/bf096b63f6246b602f4ca4a0e9f81a4c500fa2a7.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/0/20160907202847-638693413.jpg/800">
                     <div class="aui-img-body" onclick="categorydetail(6)">
-                        同里古镇
-                        <p class='aui-ellipsis-2' id="6">
-                            同里镇，江南六大古镇之一，同里旧称“富土”，唐初改为“铜里”，宋时将旧名拆字为“同里”。始建于宋代，截至2015年已有1000多年历史，是汉族水乡文化古镇。同里镇位于苏州市吴江区，距苏州市市区18公里，距上海80公里
-                            。</p>
+                        山海关景区
+                        <p class='aui-ellipsis-2' id="6">山海关，古称榆关，也作渝关，又名临闾关，明朝洪武十四年（公元1381年），徐达中山王奉命修永平、界岭等关，在此创建山海关，因其北倚燕山，南连渤海，故得名山海关。全国重点文物保护单位，明长城关楼古建筑。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://b.hiphotos.baidu.com/baike/s%3D220/sign=ea35056bcffc1e17f9bf8b337a91f67c/f603918fa0ec08faf8a1a1da59ee3d6d55fbda2e.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/18307/20150602142331-53393224.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(7)">
-                        南浔古镇
-                        <p class='aui-ellipsis-2' id="7">南浔古镇是江南六大古镇之一、国家AAAAA级旅游景区、全国特色景观旅游名镇。</p>
+                        云冈石窟
+                        <p class='aui-ellipsis-2' id="7">云冈石窟位于中国北部山西省大同市西郊17公里处的武周山南麓，石窟依山开凿，东西绵延1公里。存有主要洞窟45个，大小窟龛252个，石雕造像51000余躯，为中国规模最大的古代石窟群之一，与敦煌莫高窟、洛阳龙门石窟和天水麦积山石窟并称为中国四大石窟艺术宝库。</p>
                     </div>
                 </li>
             </ul>
 
             <ul class="aui-list-view demo-box" style="margin-bottom: 0;" id="three">
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://b.hiphotos.baidu.com/baike/w%3D268/sign=e2375e912edda3cc0be4bf2639e93905/e1fe9925bc315c609da9ace18db1cb1349547784.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/14847/20160923173812-627876629.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(8)">
-                        西沱镇
-                        <p class='aui-ellipsis-2' id="8">
-                            西沱历史文化悠久、早在清朝乾隆时期，这里就是“水陆贸易、烟火繁盛、俨然一沼邑”。从古至今，这里就是长江上游重要的深水良港，现在已成为黄水国家森林公园的重要旅游门户。</p>
+                        北京
+                        <p class='aui-ellipsis-2' id="8">北京小吃，传统四合院，胡同文化，北京方言俗语，民俗民风，传说典故，满人入关所带来的新服饰文化等等；另外，作为一座历史悠久的古都，其历史渊源，古建遗迹也是她不可缺少的文化要素；还有，北京作为国家首都，其全国政治、经济、文化中心的地位也是她的重要文化元素之一。我觉得，一座城市没办法确切地说她究竟包含哪些文化，应该具体的问题具体研究。衣、食、住、行，只要是北京的生活，就存在北京文化。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://g.hiphotos.baidu.com/baike/w%3D268/sign=6db4fb5ed562853592e0d527a8ee76f2/9d82d158ccbf6c8176eead44bc3eb13532fa4045.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/21841/20161004124557-1810935131.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(9)">
-                        古田镇
-                        <p class='aui-ellipsis-2' id="9">
-                            古田镇隶属于福建省龙岩市上杭县，位于上杭县东北部、梅花山南麓，地处新罗、上杭、连城三县（区）结合部。全镇面积227平方公里，辖21个行政村，4934户，18815人（2009年数据）。1991年全镇工农业总产值突破亿元，率先成为全国革命老区第一个亿元镇。</p>
+                        天津
+                        <p class='aui-ellipsis-2' id="9">天津文化,游津门故里，乔香纳福，八方来客同飨宴。 览九河下稍，钟灵毓秀，九州宾朋共欢歆。这是形容天津古文化街乔香阁的对联。乔香阁在天津古文化街宫南西侧。古文化街位于南开区东北隅东门外，海河西岸，北起老铁桥大街(宫北大街)，南至水阁大街(宫南大街)。南北街口各有牌坊一座，上书“津门故里”和“沽上艺苑”，长687米，宽5米，系商业步行街。这里在古代是祭祀海神和船工聚会娱乐之场所。现已修复的古文化街包括天后宫及宫南、宫北大街。天后宫俗称“娘娘宫”，是古文化街上的主要参观旅游项目。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://g.hiphotos.baidu.com/baike/w%3D268/sign=39fdd99642a7d933bfa8e375954ad194/b21bb051f819861800340c064aed2e738ad4e6c5.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/p/20140724/20140724143135-1795137811.jpg">
                     <div class="aui-img-body" onclick="categorydetail(10)">
-                        静升镇
-                        <p class='aui-ellipsis-2' id="10">
-                            静升镇，位于山西省灵石县，坐落在风景秀美的绵山脚下，依山傍水，一条大街横贯东西，九沟、八堡、十八街巷散布于北山之麓。2003年，被国家建设部和文物局联合命名为中国首批历史文化名镇，并位居榜首。同年又被建设部确定为首批全国重点小城镇之一。2006年以来，先后荣获“山西省环境优美乡镇”、“山西省特色景观旅游名镇”、“山西省新农村致富技术培训百强乡镇”、“山西省百万农民健身活动先进乡镇”等荣誉称号.2010年3月，被国家住房和城乡建设部、国家旅游局联合命名为全国特色景观旅游名镇。</p>
+                        湖南
+                        <p class='aui-ellipsis-2' id="10">湖南自古有“惟楚有材，于斯为盛”之誉。[1]近现代以来，先后涌现了启蒙思想家魏源，清代中兴名臣曾国藩、左宗棠，维新志士谭嗣同、唐才常，辛亥元勋黄兴、蔡锷、宋教仁等。新民主主义革命时期，湖南发生了秋收起义、湘南暴动、桑植起义、平江起义、通道转兵、芷江受降等著名历史事件。毛泽东、刘少奇、任弼时、彭德怀等无产阶级革命家，为创建中国共产党、缔造中华人民共和国做出了卓越贡献；新中国授衔的十大元帅、十大将军有九位是湖南人。建国后从沈从文、周立波等著名文学家，熊倪、刘璇等世界体育名将，到共产主义战士雷锋；湖湘人才联袂而起、灿若星河。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://g.hiphotos.baidu.com/baike/w%3D268/sign=2c7f8779afd3fd1f3609a53c084f25ce/d31b0ef41bd5ad6e733070bd86cb39dbb7fd3c9f.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/7667/20150415144104-803502680.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(11)">
-                        婺源镇
-                        <p class='aui-ellipsis-2' id="11">婺源是江西省一个历史悠久的古县，历史上曾属安徽管辖。是古徽州一府六县之一。 婺源古镇
-                            是南宋著名理学家朱熹的故里和中国铁路之父詹天佑的家乡。“一生痴绝处，无梦到徽州”。“徽州”是被越来越多人提及的字眼，有人说这里是中国传统文化的家园，地处偏僻山乡的婺源很幸运地保存了古徽州的所有气韵。</p>
+                        上海
+                        <p class='aui-ellipsis-2' id="11">上海是中国近代流行乐的发源地之一，上海音乐学院是当时亚洲顶尖的音乐学府，当时上海的流行乐曾一度风靡东南亚，部分歌曲被美国歌手英文翻唱后曾一度创下连续数月雄踞美国流行歌曲排行榜冠军的传奇。大量歌曲至今脍炙人口如夜上海、夜来香、何日君再来、天涯歌女、上海滩等都已成不朽经典。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://c.hiphotos.baidu.com/baike/w%3D268/sign=fa39feb3d52a283443a6310d63b4c92e/caef76094b36acafb4bd78527dd98d1001e99c3b.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/0/ori-20170215161910-1033699062.jpg/800">
                     <div class="aui-img-body" onclick="categorydetail(12)">
-                        涞滩镇
-                        <p class='aui-ellipsis-2' id="12">
-                            涞滩镇位于美丽的渠江边，是重庆市级风景名胜区涞滩----双龙湖风景区的重要组成部分，重庆小十景之一，距重庆城区85公里，交通十分方便。从重庆合川城出发往东北方向约42公里就是养在深闺中的涞滩古镇了。
-                            涞滩古镇原名叫涞滩古寨，始建于清嘉庆年间，距今已200多年。由于傍着渠江，涞滩古寨商贾云集，街市兴旺，依山而筑的二佛寺也香火不断，是盛极一时的风水宝地。</p>
+                        江苏
+                        <p class='aui-ellipsis-2' id="12">江苏辖江临海，扼淮控湖，经济繁荣，教育发达，文化昌盛。地跨长江、淮河南北，京杭大运河从中穿过，拥有中原、江淮、金陵、吴四大多元文化，是中国古代文明的发祥地之一。江苏地理上跨越南北，气候、植被也同时具有南方和北方的特征。江苏东临黄海、太平洋，与上海市、浙江省、安徽省、山东省接壤，与日本九州岛、韩国济州岛隔海相望，已与加利福尼亚州缔结为姐妹省州。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://g.hiphotos.baidu.com/baike/s%3D220/sign=4f9eb8419822720e7fcee5f84bcb0a3a/96dda144ad345982f4def8b10cf431adcbef84b8.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/p/20140109/20140109141349-2076582918.jpg">
                     <div class="aui-img-body" onclick="categorydetail(13)">
-                        双江镇
-                        <p class='aui-ellipsis-2' id="13">
-                            潼南区双江镇，是中国第一批十大历史名镇之一(2003年由国家建设部和文物局联合评选)。古镇建于明末清初，距今有400余年。双江镇位于县城西北10公里，这里是中华人民共和国第四任国家主席杨尚昆的出生地，也是全国首批历史文化名镇。古镇因猴溪、浮溪如玉带环腰而得名，自古便是西南地区的军事、商贸要地。双江镇拥有全国历史文化名镇、重庆市十大精品旅游工程、重庆市红色旅游线、尚昆主席故里等众多品牌。</p>
+                        河北
+                        <p class='aui-ellipsis-2' id="13">河北是长城途经距离最长、保存最完好的省份，境内长城遗存达2000多公里。河北的唐山港、黄骅港、秦皇岛港均跻身亿吨大港行列。铁路、公路货物周转量居中国大陆首位。2013年，京津冀一体化上升为重大国家战略。2015年7月31日，国际奥委会主席巴赫宣布北京携手河北省张家口获得2022年冬奥会举办权。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://h.hiphotos.baidu.com/baike/w%3D268/sign=bcaa544a4b36acaf59e091fa44d98d03/3b292df5e0fe9925cb747e2334a85edf8db1714c.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/40481/20140826154025-15482061.jpg/0">
                     <div class="aui-img-body" onclick="categorydetail(14)">
-                        碛口镇
-                        <p class='aui-ellipsis-2' id="14">
-                            碛口镇是山西省吕梁市临县下辖镇，地处吕梁山西麓，临县城南48公里处，南与柳林县黄河名镇孟门镇相接，东与林家坪镇相连，北与丛罗峪镇接壤，西与陕西吴堡县隔河相望。全镇面积108.45平方公里，人口33409人，其中农业人口31405人，共有40个行政村，一个居民委员会。</p>
+                        山西
+                        <p class='aui-ellipsis-2' id="14">山西，因居太行山之西而得名，简称“晋”，又称“三晋”，省会太原市。“东依太行山，西、南依吕梁山、黄河，北依古长城，与河北、河南、陕西、内蒙古等省区为界”柳宗元称之为“表里山河”。[1] 山西是中华民族发祥地之一，山西有文字记载的历史达三千年，被誉为“华夏文明摇篮”，素有“中国古代文化博物馆”之称。</p>
                     </div>
                 </li>
             </ul>
 
             <ul class="aui-list-view demo-box" style="margin-bottom: 0;" id="four">
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/0/ori-20160227094351-1112928811.jpg/800">
                     <div class="aui-img-body">
-                        小吃列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        北京小吃
+                        <p class='aui-ellipsis-2'>北京小吃俗称碰头食或菜茶、茶食，是北京人津津乐道的一项北京特色，其中较著名的有老北京十三绝等。北京除了故宫、颐和园这样的人文建筑，大抵最可以吸引人的就是这北京小吃。延续至今的北京小吃有些已经流传有近千年的历史。由于北京作为都城，先后有不同民族的统治者，所以北京小吃又融入了汉、回、满各族特色以及沿承的宫廷风味特色。在小吃烹调方式上更是煎炒烹炸烤涮烙样样齐全。舒乙以四个字概括北京小吃：“小吃大义”。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/7440/20160227105316-717809754.jpg/0">
                     <div class="aui-img-body">
-                        小吃列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        天津小吃
+                        <p class='aui-ellipsis-2'>天津小吃（Tianjin Snack）是以香、酥、甜著称的特色风味食品，代表风味小吃有被誉为“津门三绝”的狗不理包子、桂发祥麻花、耳朵眼炸糕，蒸食类中的有各种蒸饼、糕干、喇嘛糕、熟梨糕等。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/1178/20160305114056-355104546.jpg/0">
                     <div class="aui-img-body">
-                        小吃列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        湖南-湘菜
+                        <p class='aui-ellipsis-2'>湘菜，是中国历史悠久的一个地方菜。是汉族饮食文化八大菜系之一。湘菜历史悠久，早在汉朝就已经形成菜系，烹调技艺已有相当高的水平。湖南地处我国中南地区，气候温暖，雨量充沛，自然条件优越。湘西多山，盛产笋、蕈和山珍野味；湘东南为丘陵和盆地，家牧副渔发达；湘北是著名的洞庭湖平原，素称"鱼米之乡"。在《史记》中曾记载了楚地"地势饶食，无饥馑之患"。湘西菜擅长香、酸、辣，具有浓郁的山乡风味。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/4911/20160301092903-375670763.jpg/0">
                     <div class="aui-img-body">
-                        小吃列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        上海小吃
+                        <p class='aui-ellipsis-2'> 上海是各种名特小吃荟萃的地方，它的口味，既不同于粤港地区的纯甜味，也有别于四川、重庆的麻辣味，而是以清淡、鲜美、可口著称。 上海的小吃，有蒸、煮、炸、烙，品种很多，最为消费者喜爱的，莫过于是：汤包、百叶、油面精。这是人们最青睐的“三主件”。上海著名土特食品还有：桂花糖藕、鸽蛋圆子、金瓜、酱包瓜、鸽牌龙虾片、松江四鳃鲈、邵万生南味食品等。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/27271/20150606075947-1942352667.jpg/0">
                     <div class="aui-img-body">
-                        小吃列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        江苏地区-阳春面
+                        <p class='aui-ellipsis-2'>阳春面，又称光面或清汤面、白汤面，是指一种不加上任何菜肴配料而只有汤的面条，常见于中国江苏省及上海地区。便宜、吃起来不花时间，是其受欢迎的主因。煮这种面的面条一般没有规限，细如龙须面或者粗如宽面均可使用。“阳春”一词的由来，据《辞海》释：“农历十月为小阳春，市井隐语逐以阳春代表十。”明人所著《五杂俎‧天》中云：“即天地之光，四月多寒，而十月多暖，有桃李生华者，俗谓之小阳春。”据此可见，农历十月的别称为小阳春，故又更进一步地引申阳春为十数之意，而阳春面刚上市之时，价格正好是十分钱一碗，好事者遂将这十分钱一碗的光面冠以阳春面美名，取其十分钱与农历十月皆为十数之故。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/p/20140702/20140702204103-1333292804.jpg">
                     <div class="aui-img-body">
-                        小吃列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        河北小吃-烙糕
+                        <p class='aui-ellipsis-2'>河北小吃烙糕，烙糕是承德人用当地所产谷米磨成面,再经烙制而成的具有浓厚香土气味的传统风味食品。它与年糕、豆包、煎饼一起被誉为“吉祥四糕”每当尾月农闲季节,承德山区百姓便家家户户做烙糕。做好的烙糕外焦内嫩、味香适口。杏仁露，承德地区盛产杏仁,个大味甜,俗称“大扁”。避暑山庄中的御厨房很早就用山庄中的矿泉水与杏仁一同配制出杏仁露,以供天子、后妃以及王公大臣们享用。杏仁露具有降脂养颜的功效。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://pic.baike.soso.com/ugc/baikepic2/5946/20150318145729-133043087.jpg/0">
                     <div class="aui-img-body">
-                        小吃列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        平遥牛肉
+                        <p class='aui-ellipsis-2'>平遥牛肉是山西晋中地区平遥县的特色传统名菜。平遥牛肉是博大精深、源远流长的中国美食文化的精华之一，古汉时就有“卖刀买犊，卖刃买牛，游刃有余”的对牛肉加工的描述。据传，早在明代平遥牛肉已闻名遐迩，至于。到了清代后期和民国年间，平遥牛肉已成为达官显贵宴客的必备之品。史载清末，慈禧太后途经平遥，享用平遥牛肉后，闻其香而提其神，品其味而解其困，故将其定为皇宫贡品。到本世纪30年代，平遥牛肉已远销北京、天津、西安等地。当时，每逢秋冬季节，各地行商纷至沓来，贩运牛肉，使平遥牛肉闻名北国。</p>
                     </div>
                 </li>
             </ul>
+            
 
-            <ul class="aui-list-view demo-box" style="margin-bottom: 0;" id="five">
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
-                    <div class="aui-img-body">
-                        水乡列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
-                    </div>
-                </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
-                    <div class="aui-img-body">
-                        水乡列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
-                    </div>
-                </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
-                    <div class="aui-img-body">
-                        水乡列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
-                    </div>
-                </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
-                    <div class="aui-img-body">
-                        水乡列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
-                    </div>
-                </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
-                    <div class="aui-img-body">
-                        水乡列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
-                    </div>
-                </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
-                    <div class="aui-img-body">
-                        水乡列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
-                    </div>
-                </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
-                    <div class="aui-img-body">
-                        水乡列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
-                    </div>
-                </li>
-            </ul>
-
+            
             <ul class="aui-list-view demo-box" style="margin-bottom: 0;" id="six">
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://admin.soupu.com/upload/editor/2015/3/2510274327_y.jpg">
                     <div class="aui-img-body">
-                        购物列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        万达集团·万达广场（大连）
+                        <p class='aui-ellipsis-2'>万达广场毫无疑问是目前中国最为成功，知名度最大的商业品牌，一般都包括购物中心，娱乐中心和城市公寓。所建之处，往往都成为当地的地标性建筑。如今，万达广场也已从第一代的单店、第二代的组合店，发展到第三代城市综合体。每一座万达广场都繁华了一个城市中心，“万达广场就是城市中心”， 万达集团这样定位目前遍布祖国诸多大中城市的万达广场。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://admin.soupu.com/upload/editor/2015/3/251033498_y.jpg">
                     <div class="aui-img-body">
-                        购物列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        中粮集团·大悦城（北京）
+                        <p class='aui-ellipsis-2'>大悦城的概念源于中粮集团总裁宁高宁与国学专家学者文怀沙欧阳中石刘先银等一次小聚受到启发，作为孔子故乡人士，夜读《论语》，读到一句话，“近者悦，远者来”得来的灵感，意为给到来的人以愉快的享受。大悦城是中粮集团商业地产板块战略部署精心打造的“国际化青年城市综合体”，其定位为时尚、流行、性感、潮流等多重年轻风格，是现代大型Shopping Mall的杰出代表作。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://admin.soupu.com/upload/editor/2015/3/2510343520_y.jpg">
                     <div class="aui-img-body">
-                        购物列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        华润集团·万象城（深圳）
+                        <p class='aui-ellipsis-2'>万象城（MIXC）是世界500强企业华润集团旗下开发的高品质购物中心，万象城倡导国际化的消费理念，彰显时尚品味与优雅格调，引领全新的生活方式与消费潮流。万象城力推“一站式”消费和“体验式”购物，包罗万象，应有尽有，为消费者带来全新的消费概念和生活体验。深圳万象城于2004年正式开业，是深圳最大、华南最好、中国最具示范效应的大型室内购物中心，总建筑面积达18.8万平方米，拥有6层商用楼面，300多个大小不一、功能各异的独立店铺，集零售、餐饮、娱乐、休闲、文化、康体等诸多元素为一身，包罗万象、应有尽有，为人们带来全新的消费概念和生活体验，是真正意义的“一站式”消费中心。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://admin.soupu.com/upload/editor/2015/3/251037188_y.png">
                     <div class="aui-img-body">
-                        购物列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        星河集团·COCO Park（深圳）
+                        <p class='aui-ellipsis-2'>COCO Park是国内首创情景式公园版休闲购物体验中心，深圳CBD版块新商业代表，于2006年率先开业的福田COCO Park拥有6000平方米下沉式露天广场、九大自由进出口、12条商业内街、5大自然光中庭、150余家国际国内知名品牌。很多从事商业地产的人员来到深圳，都把COCO Park和万象城作为两个必选的考察项目。</p>
                     </div>
                 </li>
                 <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                    <img class="aui-img-object aui-pull-left" src="http://admin.soupu.com/upload/editor/2015/3/2510385185_y.jpg">
                     <div class="aui-img-body">
-                        购物列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        恒隆集团·恒隆广场（上海）
+                        <p class='aui-ellipsis-2'>恒隆集团创办于1960年，是香港最具资历的上市公司之一，在香港和中国内地享有尊崇地位，被公认为一家重视质量的顶级物业发展商。90年代初开展内地拓展策略，并集中在“人口庞大城市的最佳地段”发展商业地产项目，于1992年率先进军上海，建造两个地标式项目——恒隆广场及港汇恒隆广场。2001年7月14日隆重开幕以来，上海浦西第一高楼恒隆广场已经成为中国乃至世界的时尚高地。众多世界顶尖品牌以在恒隆开设专卖店为荣，有些甚至专门将其在中国大陆的首家专卖店甚至旗舰店落户于此，足见恒隆广场在世界奢侈品牌心目中不可动摇的尊贵地位。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://admin.soupu.com/upload/editor/2015/3/251040068_y.jpg">
                     <div class="aui-img-body">
-                        购物列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        天河城集团·天河城（广州）
+                        <p class='aui-ellipsis-2'>天河城(TEEMALL)是一座规模宏大、功能齐全的现代型综合购物中心，经过十年的经营，曾经被誉为 “ 中国第一商城 ” 。天河城集购物、游览、美食、娱乐、休闲、商务、广告、信息、展览、康体等多功能于一体，名副其实地“把北京路搬进了天河城广场”，在广州开创了一种全新的消费概念，把广州的商业发展提高到一个新水平。</p>
                     </div>
                 </li>
-                <li class="aui-list-view-cell aui-img">
-                    <img class="aui-img-object aui-pull-left"
-                         src="http://f.hiphotos.baidu.com/baike/w%3D268/sign=e318ede4b01c8701d6b6b5e01f7e9e6e/58ee3d6d55fbb2fb8e7d0b124c4a20a44623dc58.jpg">
+                 <li class="aui-list-view-cell aui-img">
+                    <img class="aui-img-object aui-pull-left" src="http://admin.soupu.com/upload/editor/2015/3/2510405131_y.jpg">
                     <div class="aui-img-body">
-                        购物列表
-                        <p class='aui-ellipsis-2'>上海海洋大学（Shanghai Ocean
-                            University）是上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。学校前身为始建于1912年的江苏省立水产学校，1952年更名为上海水产学院，1985年更名为上海水产大学，2008年更名为上海海洋大学。</p>
+                        新鸿基地产·国金中心（上海）
+                        <p class='aui-ellipsis-2'>上海国际金融中心位于浦东陆家嘴繁盛商业中心，位置非常优越，并由多位世界顶级建筑师设计，总体建筑设计由负责香港国际金融中心的殿堂级大师Caesar Pelli主理，而商场部分则由香港apm的国际顶级名师Benoy Architects负责。专案包括一座面积逾110万平方尺的大型国际购物商场，拥有双子塔外型的甲级写字楼商厦及两件达世界殿堂级的酒店。凭着世界级的建筑设计及质素，以及具现代感的独特外型，落成后将为上海树立新地标。</p>
                     </div>
                 </li>
             </ul>
@@ -486,9 +359,7 @@
         </div>
     </div>
 </div>
-<p>
-<center><i>create by yeardany</i></center>
-</p>
+<p><center><i>加载更多...</i></center></p>
 </body>
 
 </html>

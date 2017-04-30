@@ -30,57 +30,51 @@
 </head>
 <body>
 
-<header class="bar bar-nav">
-    <h3 class="title">软件相关</h1>
+<header class="bar bar-nav" style="background-color: #FFF">
+    <h1 class="title">相关与设置</h1>
 </header>
-<div class="content">
+<div class="content" style="background-color: #FFFFFF">
     <!--<div class="content-block-title">软件相关</div>-->
     <div class="list-block">
         <ul>
-            <li class="item-content">
+            <li class="item-content" style="background-color: #FFFFFF">
                 <div class="item-media"><i class="icon iconfont icon-youjian"></i></div>
-                <a class="item-inner sp" href="mailto:1379712977@qq.com?subject=反馈建议&body=以下是我对这款app的一些建议：">
-                    <div class="item-title">反 馈</div>
+                <a class="item-inner sp" href="mailto:836564481@qq.com?subject=反馈建议&body=以下是我的一些建议：">
+                    <div class="item-title">反 馈 建 议</div>
                 </a>
             </li>
-            <li class="item-content">
-                <div class="item-media"><i class="icon iconfont icon-dianhua"></i></div>
-                <a class="item-inner sp" href="tel:10086">
-                    <div class="item-title">咨 询</div>
-                </a>
-            </li>
-            <li class="item-content" onclick="about()">
+            <li class="item-content" onclick="about()" style="background-color: #FFF">
                 <div class="item-media"><i class="icon iconfont icon-guanyuwomen"></i></div>
                 <a class="item-inner sp">
-                    <div class="item-title">关 于</div>
+                    <div class="item-title">关 于 onto</div>
                 </a>
             </li>
-            <li class="item-content" onclick="openwebsite()">
+            <li class="item-content" onclick="openwebsite()" style="background-color: #FFF">
                 <div class="item-media"><i class="icon iconfont icon-diqiu"></i></div>
                 <a class="item-inner sp">
-                    <div class="item-title">官 网</div>
+                    <div class="item-title">访 问 官 网</div>
                 </a>
             </li>
         </ul>
     </div>
     <div class="list-block">
         <ul>
-            <li class="item-content" onclick="decnew()">
+            <li class="item-content" onclick="decnew()" style="background-color: #FFF">
                 <div class="item-media"><i class="icon iconfont icon-gengxin"></i></div>
                 <a class="item-inner sp">
-                    <div class="item-title">更 新</div>
+                    <div class="item-title">检 查 更 新</div>
                 </a>
             </li>
-            <li class="item-content">
+            <li class="item-content" style="background-color: #FFF">
                 <div class="item-media"><i class="icon iconfont icon-ordinaryset"></i></div>
                 <a class="item-inner sp">
-                    <div class="item-title">设 置</div>
+                    <div class="item-title">设 置 偏 好</div>
                 </a>
             </li>
-            <li class="item-content" onclick="quit()">
+            <li class="item-content" onclick="quit()" style="background-color: #FFF">
                 <div class="item-media"><i class="icon iconfont icon-quit"></i></div>
                 <a class="item-inner sp">
-                    <div class="item-title">退 出</div>
+                    <div class="item-title">退 出 onto</div>
                 </a>
             </li>
         </ul>
@@ -102,20 +96,20 @@
         });
     }
     function about() {
-        var text = "<center style='text-align:left'>1：完善搜索功能</br>2：分类功能上线</br><center/>";
+        var text = "<center style='text-align:left'>1.安全组件更新</br>2.日常维护</br><center/>";
         var version = api.appVersion;
         $.modal({
             title: '<div class="buttons-row">' +
-            '<a href="#tab1" class="button bg-green tab-link active">软件版本</a>' +
+            '<a href="#tab1" class="button bg-green tab-link active">更新版本</a>' +
             '<a href="#tab2" class="button bg-green tab-link">更新日志</a>' +
             '</div>',
             text: '<div class="tabs">' +
-            '<div class="tab active" id="tab1"><h6 style="display:inline;">create by yeardany</h6></br>软件版本：' + version + '</div>' +
+            '<div class="tab active" id="tab1"><h6 style="display:inline;">Copyright© 2017 onto.com. All Rights Reserved</h6></br>当前版本：' + version + '</div>' +
             '<div class="tab" id="tab2">' + text + '</div>' +
             '</div>',
             buttons: [
                 {
-                    text: '好的',
+                    text: 'OK',
                     bold: true,
                     close: true
                 },
@@ -141,8 +135,8 @@
         });
 
         $.modal({
-            title: '更新',
-            text: '检查更新？',
+            title: '版本更新',
+            text: '是否检查更新？',
             extraClass: 'xclass',
             buttons: [
                 {
@@ -151,7 +145,7 @@
                     bold: true
                 },
                 {
-                    text: '检查',
+                    text: '确定',
                     bold: true,
                     onClick: function () {
                         gengxinsure();
@@ -184,11 +178,11 @@
         } else {
             $.modal({
                 title: '更新',
-                text: '无可用更新',
+                text: '当前已是最新版本',
                 extraClass: 'xclass',
                 buttons: [
                     {
-                        text: '好的',
+                        text: 'OK',
                         close: true,
                         bold: true
                     }
@@ -226,11 +220,11 @@
             } else {
                 $.modal({
                     title: '下载失败',
-                    text: '出现错误，下载失败',
+                    text: 'code:020258，下载失败',
                     extraClass: 'xclass',
                     buttons: [
                         {
-                            text: '好的',
+                            text: 'OK',
                             close: true,
                             bold: true
                         }

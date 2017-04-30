@@ -70,87 +70,68 @@
 </head>
 <body>
 <div class="login" onclick="login()" tapmode>
-    <div style="width: 100%;height: 110px;background-color: #886AEA;"></div>
-    <img src="../image/user_defaulthead@2x.png" alt="" class="personal_logo">
+    <div style="width: 100%;height: 110px;background-color: #F4F4F4;"></div>
+    <img src="../image/user_collection_2.png" alt="" class="personal_logo">
     <div class="userinfo">
-        <div class="title">立即登录</div>
-        <div class="subtitle" id="city"></div>
+        <div class="title" style="color: black">立即登录</div>
+        <div class="subtitle" id="city" style="color: black"></div>
     </div>
 </div>
 
 <div class="list-block">
     <ul>
         <li class="item-content item-link" onclick="warn()">
-            <div class="item-media"><i class="icon iconfont icon-5"></i></div>
+            <div class="item-media"><i class="icon iconfont icon-guanyuwomen"></i></div>
             <div class="item-inner">
-                <div class="item-title">我的信息</div>
-                <div class="item-after"></div>
-            </div>
-        </li>
-        <li class="item-content item-link" onclick="warn()">
-            <div class="item-media"><i class="icon iconfont icon-yonghu"></i></div>
-            <div class="item-inner">
-                <div class="item-title">我的标记</div>
+                <div class="item-title">收藏项目（你想去哪里？）</div>
                 <div class="item-after"></div>
             </div>
         </li>
         <li class="item-content item-link" onclick="warn()">
             <div class="item-media"><i class="icon iconfont icon-jihua01"></i></div>
             <div class="item-inner">
-                <div class="item-title">我的计划</div>
+                <div class="item-title">计划路线（出发前安排好哦！）</div>
                 <div class="item-after"></div>
             </div>
         </li>
         <li class="item-content item-link" onclick="warn()">
             <div class="item-media"><i class="icon iconfont icon-pingfenjilu"></i></div>
             <div class="item-inner">
-                <div class="item-title">我的记录</div>
+                <div class="item-title">行程记录（看看你去过哪里？）</div>
                 <div class="item-after"></div>
             </div>
         </li>
         <li class="item-content item-link" onclick="chat()">
-            <div class="item-media"><i class="icon iconfont icon-pingfenjilu"></i></div>
+            <div class="item-media"><i class="icon iconfont icon-diqiu"></i></div>
             <div class="item-inner">
-                <div class="item-title">我的社区</div>
+                <div class="item-title">大众社区（快来和大家讨论分享吧！）</div>
                 <div class="item-after"></div>
             </div>
         </li>
     </ul>
 </div>
 
-<div class="list-block">
-    <ul>
-
-        <li class="item-content item-link">
-            <div class="item-media"><i class="icon iconfont"></i></div>
-            <div class="item-inner">
-                <div class="item-title">待定...</div>
-                <div class="item-after"></div>
-            </div>
-        </li>
-    </ul>
-</div>
 </body>
 <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-    document.getElementById('city').innerHTML = "现居地：" + localStorage.city;
+    document.getElementById('city').innerHTML = "所在城市：" + localStorage.city;
     function login() {
         var buttons1 = [
             {
-                text: '登录/没有账号？点击注册...',
+                text: '登录/注册',
                 label: true
             },
             {
-                text: '我有账号，登录',
+                text: '已注册，登录',
                 bold: true,
                 onClick: function () {
                     loginsure();
                 }
             },
             {
-                text: '还没账号，注册',
+                text: '无账号，注册',
                 bold: true,
                 onClick: function () {
                     register();
@@ -189,10 +170,10 @@
     function warn() {
         $.modal({
             title: '提示',
-            text: '您还未登录，请先登录！',
+            text: '请先登录账户！',
             buttons: [
                 {
-                    text: '好的'
+                    text: 'OK'
                 }
             ]
         })
